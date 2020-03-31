@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: employees
+#
+#  id          :bigint           not null, primary key
+#  address     :string
+#  dob         :date
+#  gender      :integer
+#  name        :string
+#  pn          :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  national_id :string
+#
+
+one:
+  name: MyString
+  dob: 2020-04-01
+  gender: 1
+  address: MyString
+  pn: MyString
+  national_id: MyString
+
+two:
+  name: MyString
+  dob: 2020-04-01
+  gender: 1
+  address: MyString
+  pn: MyString
+  national_id: MyString
