@@ -1,3 +1,8 @@
+# Simplecov requires this at the very top of this file
+require 'simplecov'
+
+SimpleCov.start
+
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
