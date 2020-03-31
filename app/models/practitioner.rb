@@ -15,7 +15,4 @@
 #
 class Practitioner < ApplicationRecord
 
-    ################### Validations #######################
-    validates :email, presence: true
-
 end
