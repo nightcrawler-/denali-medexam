@@ -20,4 +20,8 @@ class Session < ApplicationRecord
 
     validates_presence_of :exam_done, :remarks
 
+    ############### Associations #########################
+
+    belongs_to :employee
+
 end

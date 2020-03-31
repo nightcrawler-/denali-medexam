@@ -13,7 +13,7 @@
 #  national_id :string
 #
 class Employee < ApplicationRecord
-    
+
     enum gender: [:female, :male]
 
     ############### Validations ##########################
@@ -21,5 +21,10 @@ class Employee < ApplicationRecord
     validates :national_id, presence: true, uniqueness: true
 
     validates_presence_of :dob, :gender, :name
+
+    ############### Associations #########################
+
+    belongs_to :workplace
+    has_many :sessions, dependent: :destroy
 
 end

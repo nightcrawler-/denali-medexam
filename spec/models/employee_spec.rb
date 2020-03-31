@@ -51,4 +51,8 @@ RSpec.describe Employee, type: :model do
     end
   end
 
+  describe "Associations" do
+    it { should belong_to(:workplace).without_validating_presence }
+  end
+
 end
