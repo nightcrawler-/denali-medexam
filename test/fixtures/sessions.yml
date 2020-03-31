@@ -1,0 +1,36 @@
+# == Schema Information
+#
+# Table name: sessions
+#
+#  id         :bigint           not null, primary key
+#  bp         :float
+#  bwt        :float
+#  exam_done  :string
+#  fp         :string
+#  lmp        :string
+#  note       :string
+#  p          :integer
+#  remarks    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  remarks: MyString
+  exam_done: MyString
+  note: MyString
+  bwt: 1.5
+  bp: 1.5
+  p: 1
+  lmp: MyString
+  fp: MyString
+
+two:
+  remarks: MyString
+  exam_done: MyString
+  note: MyString
+  bwt: 1.5
+  bp: 1.5
+  p: 1
+  lmp: MyString
+  fp: MyString

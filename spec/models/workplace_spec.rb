@@ -2,15 +2,16 @@
 #
 # Table name: workplaces
 #
-#  id           :bigint           not null, primary key
-#  address      :string
-#  email        :string
-#  location     :string
-#  name         :string
-#  phone        :string
-#  registration :string
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id              :bigint           not null, primary key
+#  address         :string
+#  email           :string
+#  location        :string
+#  name            :string
+#  phone           :string
+#  registration    :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  practitioner_id :bigint
 #
 require 'rails_helper'
 
@@ -23,7 +24,8 @@ RSpec.describe Workplace, type: :model do
                                   location: "Lavi",
                                   name: "Workplace One",
                                   phone: "072300712",
-                                  registration: "ASW344"
+                                  registration: "ASW344",
+                                  practitioner: Practitioner.new
           )
         }
 
@@ -67,6 +69,10 @@ RSpec.describe Workplace, type: :model do
       subject.registration = nil
       expect(subject).to_not be_valid
     end
+  end
+
+  describe "Associations" do
+    it { should belong_to(:practitioner).without_validating_presence }
   end
 
 end
