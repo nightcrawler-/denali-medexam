@@ -2,25 +2,28 @@
 #
 # Table name: sessions
 #
-#  id         :bigint           not null, primary key
-#  bp         :float
-#  bwt        :float
-#  exam_done  :string
-#  fp         :string
-#  lmp        :string
-#  note       :string
-#  p          :integer
-#  remarks    :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :bigint           not null, primary key
+#  bp          :float
+#  bwt         :float
+#  exam_done   :string
+#  fp          :string
+#  lmp         :string
+#  note        :string
+#  p           :integer
+#  remarks     :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  employee_id :bigint
 #
 require 'rails_helper'
 
 RSpec.describe Session, type: :model do
 
   subject { described_class.new(
-    exam_done: "Physical",
-    remarks: "Fit")
+                                exam_done: "Physical",
+                                remarks: "Fit",
+                                employee: Employee.new
+    )
   }
 
   describe "Validations" do

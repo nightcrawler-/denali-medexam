@@ -2,15 +2,16 @@
 #
 # Table name: employees
 #
-#  id          :bigint           not null, primary key
-#  address     :string
-#  dob         :date
-#  gender      :integer
-#  name        :string
-#  pn          :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  national_id :string
+#  id           :bigint           not null, primary key
+#  address      :string
+#  dob          :date
+#  gender       :integer
+#  name         :string
+#  pn           :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  national_id  :string
+#  workplace_id :bigint
 #
 require 'rails_helper'
 
@@ -21,7 +22,8 @@ RSpec.describe Employee, type: :model do
                         gender: "male",
                         name: "James",
                         national_id: "189943734",
-                        dob: Date.yesterday
+                        dob: Date.yesterday,
+                        workplace: Workplace.new
     )
   }
 
