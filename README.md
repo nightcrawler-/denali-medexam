@@ -1,4 +1,6 @@
 # medexam
+
+[![CircleCI](https://circleci.com/gh/nightcrawler-/medexam.svg?style=svg)](https://circleci.com/gh/nightcrawler-/medexam)
 Reboot of the original MS Access based Med-Exam app. Automates collection, persistence and dissemination of medical records.
 
 ## Contribuion/Usage
