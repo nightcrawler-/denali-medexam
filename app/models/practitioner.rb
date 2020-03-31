@@ -17,6 +17,10 @@ class Practitioner < ApplicationRecord
 
     ############### VALIDATIONS ###################
 
-    validates_prese
+    validates_presence_of :address
+    validates_presence_of :email
+    validates_presence_of :location
+    validates_presence_of :name
+    validates_presence_of :registration
 
 end
