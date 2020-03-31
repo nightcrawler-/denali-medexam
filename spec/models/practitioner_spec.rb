@@ -4,7 +4,7 @@ RSpec.describe Practitioner, type: :model do
 
   subject { described_class.new(
               name: "Jane",
-              email: "Me",
+              email: "user@yahoo.com",
               registration: "woah",
               location: "nyef",
               address: "miau")
@@ -21,6 +21,11 @@ RSpec.describe Practitioner, type: :model do
 
   it "is not valid without an email" do
     subject.email = nil
+    expect(subject).to_not be_valid
+  end 
+
+  it "is not valid without a valid" do
+    subject.email = "nonesense email"
     expect(subject).to_not be_valid
   end 
 

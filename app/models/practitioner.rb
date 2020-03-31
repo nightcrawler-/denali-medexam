@@ -17,8 +17,9 @@ class Practitioner < ApplicationRecord
 
     ############### VALIDATIONS ###################
 
+    validates :email, email: true, uniqueness: true
+
     validates_presence_of :address
-    validates_presence_of :email
     validates_presence_of :location
     validates_presence_of :name
     validates_presence_of :registration
