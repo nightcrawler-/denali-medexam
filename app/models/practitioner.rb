@@ -15,4 +15,8 @@
 #
 class Practitioner < ApplicationRecord
 
+    ############### VALIDATIONS ###################
+
+    validates_prese
+
 end
