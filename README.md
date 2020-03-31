@@ -1,4 +1,4 @@
-# medexam
+# Med Exam
 
 [![CircleCI](https://circleci.com/gh/nightcrawler-/medexam.svg?style=shield&circle-token=0ad5ab3a7ed5a25b7125d9cd33e8a6cb19b3492a)](https://circleci.com/gh/nightcrawler-/medexam)
 
