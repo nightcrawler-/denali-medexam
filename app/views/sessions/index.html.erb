@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Remarks</th>
+      <th>Exam done</th>
+      <th>Note</th>
+      <th>Bwt</th>
+      <th>Bp</th>
+      <th>P</th>
+      <th>Lmp</th>
+      <th>Fp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sessions.each do |session| %>
+      <tr>
+        <td><%= session.remarks %></td>
+        <td><%= session.exam_done %></td>
+        <td><%= session.note %></td>
+        <td><%= session.bwt %></td>
+        <td><%= session.bp %></td>
+        <td><%= session.p %></td>
+        <td><%= session.lmp %></td>
+        <td><%= session.fp %></td>
+        <td><%= link_to 'Show', session %></td>
+        <td><%= link_to 'Edit', edit_session_path(session) %></td>
+        <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Session', new_session_path %>

@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_162800) do
+ActiveRecord::Schema.define(version: 2020_03_31_224541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.date "dob"
+    t.integer "gender"
+    t.string "address"
+    t.string "pn"
+    t.string "national_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "workplace_id"
+  end
 
   create_table "practitioners", force: :cascade do |t|
     t.string "name"
@@ -25,6 +37,32 @@ ActiveRecord::Schema.define(version: 2020_03_31_162800) do
     t.string "signature"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string "remarks"
+    t.string "exam_done"
+    t.string "note"
+    t.float "bwt"
+    t.float "bp"
+    t.integer "p"
+    t.string "lmp"
+    t.string "fp"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "employee_id"
+  end
+
+  create_table "workplaces", force: :cascade do |t|
+    t.string "name"
+    t.string "registration"
+    t.string "location"
+    t.string "phone"
+    t.string "address"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "practitioner_id"
   end
 
 end

@@ -21,4 +21,9 @@ class Practitioner < ApplicationRecord
 
     validates_presence_of :address, :location, :name, :registration
 
+
+    ############## ASSOCIATIONS ####################
+
+    has_many :workplaces, dependent: :destroy
+
 end
