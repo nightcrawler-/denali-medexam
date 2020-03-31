@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: medexam_production
-  username: medexam
-  password: <%= ENV['MEDEXAM_DATABASE_PASSWORD'] %>
+  username: frederick
+  password: desmosedici
+# password: <%= ENV['MEDEXAM_DATABASE_PASSWORD'] %> TODO: Research on ways to inject env variables better
