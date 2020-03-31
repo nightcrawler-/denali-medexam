@@ -10,38 +10,40 @@ RSpec.describe Practitioner, type: :model do
               address: "miau")
           }
 
-  it "is valid with valid attributes" do
-    expect(subject).to be_valid
+  describe "Validations" do 
+
+    it "is valid with valid attributes" do
+      expect(subject).to be_valid
+    end
+
+    it "is not valid without a name" do
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without an email" do
+      subject.email = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without a valid" do
+      subject.email = "nonesense email"
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without a registration" do
+      subject.registration = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without an address" do
+      subject.address = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without a location" do
+      subject.location = nil
+    expect(subject).to_not be_valid
+    end 
   end
-
-  it "is not valid without a name" do
-    subject.name = nil
-    expect(subject).to_not be_valid
-  end 
-
-  it "is not valid without an email" do
-    subject.email = nil
-    expect(subject).to_not be_valid
-  end 
-
-  it "is not valid without a valid" do
-    subject.email = "nonesense email"
-    expect(subject).to_not be_valid
-  end 
-
-  it "is not valid without a registration" do
-    subject.registration = nil
-    expect(subject).to_not be_valid
-  end 
-
-  it "is not valid without an address" do
-    subject.address = nil
-    expect(subject).to_not be_valid
-  end 
-
-  it "is not valid without a location" do
-    subject.location = nil
-  expect(subject).to_not be_valid
-  end 
-
 end
