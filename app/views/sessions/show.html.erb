@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @session.remarks %>
+</p>
+
+<p>
+  <strong>Exam done:</strong>
+  <%= @session.exam_done %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @session.note %>
+</p>
+
+<p>
+  <strong>Bwt:</strong>
+  <%= @session.bwt %>
+</p>
+
+<p>
+  <strong>Bp:</strong>
+  <%= @session.bp %>
+</p>
+
+<p>
+  <strong>P:</strong>
+  <%= @session.p %>
+</p>
+
+<p>
+  <strong>Lmp:</strong>
+  <%= @session.lmp %>
+</p>
+
+<p>
+  <strong>Fp:</strong>
+  <%= @session.fp %>
+</p>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>
