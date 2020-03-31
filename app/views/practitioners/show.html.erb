@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @practitioner.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @practitioner.address %>
+</p>
+
+<p>
+  <strong>Registration:</strong>
+  <%= @practitioner.registration %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @practitioner.location %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @practitioner.email %>
+</p>
+
+<p>
+  <strong>Fax:</strong>
+  <%= @practitioner.fax %>
+</p>
+
+<p>
+  <strong>Signature:</strong>
+  <%= @practitioner.signature %>
+</p>
+
+<%= link_to 'Edit', edit_practitioner_path(@practitioner) %> |
+<%= link_to 'Back', practitioners_path %>
