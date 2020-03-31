@@ -14,4 +14,8 @@
 #  updated_at   :datetime         not null
 #
 class Practitioner < ApplicationRecord
+
+    ################### Validations #######################
+    validates :email, presence: true
+
 end

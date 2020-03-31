@@ -52,8 +52,12 @@ group :test do
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
 
-  #annotate model files with db fields
+  # annotate model files with db fields
   gem 'annotate'
+
+  # Cleaner output when running tests
+  gem 'minitest-reporters'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
