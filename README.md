@@ -93,5 +93,10 @@ cd myapp
 # Create the database
 rake db:create
 
+#You might encouter a db creation permissions related issue at this point, do the following:
+sudo -u postgres psql
+postgres=# alter user frederick createdb;
+
+
 rails server
 ```
