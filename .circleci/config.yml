@@ -18,6 +18,13 @@ jobs: # a collection of steps
     steps: # a collection of executable commands
       - checkout # special step to check out source code to working directory
 
+        # To avoid fails likely caused by outdated bundler. Check for repetitions and fix
+      - run:
+          name: install dependencies
+          command: |
+            gem update --system
+            gem install bundler:2.1.4
+
       # Which version of bundler?
       - run:
           name: Which bundler?
