@@ -97,6 +97,7 @@ rake db:create
 sudo -u postgres psql
 postgres=# alter user frederick createdb;
 
+rails db:migrate
 
 rails server
 ```
