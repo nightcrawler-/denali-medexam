@@ -650,6 +650,8 @@
       },
       "/home/frederick/Dev/cafrecode/rails-apps/denali-medexam/config/routes.rb": {
         "lines": [
+          null,
+          1,
           1,
           1,
           null,
@@ -700,6 +702,6 @@
         ]
       }
     },
-    "timestamp": 1585847923
+    "timestamp": 1585848432
   }
 }
