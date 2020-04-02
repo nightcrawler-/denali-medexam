@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bp:</strong>
+  <%= @employee_examination_session.bp %>
+</p>
+
+<p>
+  <strong>Btw:</strong>
+  <%= @employee_examination_session.btw %>
+</p>
+
+<p>
+  <strong>Fp:</strong>
+  <%= @employee_examination_session.fp %>
+</p>
+
+<p>
+  <strong>Lmp:</strong>
+  <%= @employee_examination_session.lmp %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @employee_examination_session.remarks %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @employee_examination_session.employee_id %>
+</p>
+
+<p>
+  <strong>Session:</strong>
+  <%= @employee_examination_session.session_id %>
+</p>
+
+<%= link_to 'Edit', edit_employee_examination_session_path(@employee_examination_session) %> |
+<%= link_to 'Back', employee_examination_sessions_path %>

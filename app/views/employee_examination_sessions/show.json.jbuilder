@@ -1,0 +1,1 @@
+json.partial! "employee_examination_sessions/employee_examination_session", employee_examination_session: @employee_examination_session

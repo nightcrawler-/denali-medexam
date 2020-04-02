@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @workplace.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @workplace.email %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @workplace.location %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @workplace.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @workplace.phone %>
+</p>
+
+<p>
+  <strong>Registration:</strong>
+  <%= @workplace.registration %>
+</p>
+
+<p>
+  <strong>Practitioner:</strong>
+  <%= @workplace.practitioner_id %>
+</p>
+
+<%= link_to 'Edit', edit_workplace_path(@workplace) %> |
+<%= link_to 'Back', workplaces_path %>
