@@ -101,6 +101,22 @@
               <div class="col-12">
                 <div class="form-group row">
                   <div class="col-md-4">
+                    <span> <%= form.label :phone %>
+                    </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.text_field :phone, class: "form-control", placeholder: "Phone Number" %>
+                      <div class="form-control-position">
+                        <i class="feather icon-lock"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
                     <span> <%= form.label :fax %>
                     </span>
                   </div>
@@ -114,7 +130,7 @@
                   </div>
                 </div>
               </div>
-     
+
               <div class="col-md-8 offset-md-4">
                 <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
                 <button type="reset" class="btn btn-outline-warning mr-1 mb-1">Reset</button>
