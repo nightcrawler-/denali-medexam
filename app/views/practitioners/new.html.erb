@@ -1,0 +1,10 @@
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :practitioners do %>
+active
+<% end %>
+
+<h4 class="card-title">Create new practitioner</h4>
+
+<%= render 'form', practitioner: @practitioner %>
+
+<%= link_to 'Back', practitioners_path %>

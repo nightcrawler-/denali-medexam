@@ -1,0 +1,12 @@
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :examination_sessions do %>
+active
+<% end %>
+
+<h4>Editing examination_session</h4>
+
+<%= render 'form', examination_session: @examination_session %>
+<%= render 'examination_session_details', examination_session: @examination_session %>
+
+<%= link_to 'Show', @examination_session %> |
+<%= link_to 'Back', sessions_path %>

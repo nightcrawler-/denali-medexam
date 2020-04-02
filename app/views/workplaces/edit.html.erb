@@ -1,0 +1,10 @@
+<% content_for :workplaces do %>
+active
+<% end %>
+
+<h1>Editing Workplace</h1>
+
+<%= render 'form', workplace: @workplace %>
+
+<%= link_to 'Show', @workplace %> |
+<%= link_to 'Back', workplaces_path %>

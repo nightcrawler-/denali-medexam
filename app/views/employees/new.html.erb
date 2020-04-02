@@ -1,0 +1,10 @@
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :employees do %>
+active
+<% end %>
+
+<h1>New Employee</h1>
+
+<%= render 'form', employee: @employee %>
+
+<%= link_to 'Back', employees_path %>

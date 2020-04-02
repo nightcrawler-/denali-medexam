@@ -1,0 +1,60 @@
+<!-- <p id="notice"><%= notice %></p> -->
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :practitioners do %>
+active
+<% end %>
+
+<!-- Basic Tables start -->
+<div class="row" id="basic-table">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Practitioners</h4>
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <p class="card-text">Below is a list and details of practitioners registered on the system</p>
+          <!-- Table with outer spacing -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Registration</th>
+                  <th>Location</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Fax</th>
+                  <th>Signature</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @practitioners.each do |practitioner| %>
+                <tr>
+                  <td><%= practitioner.name %></td>
+                  <td><%= practitioner.address %></td>
+                  <td><%= practitioner.registration %></td>
+                  <td><%= practitioner.location %></td>
+                  <td><%= practitioner.email %></td>
+                  <td><%= practitioner.phone %></td>
+                  <td><%= practitioner.fax %></td>
+                  <td><%= practitioner.signature %></td>
+                  <td><%= link_to 'Show', practitioner %></td>
+                  <td><%= link_to 'Edit', edit_practitioner_path(practitioner) %></td>
+                  <td><%= link_to 'Destroy', practitioner, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <%= link_to '<button type="button" class="btn btn-outline-dark mr-1 mb-1">New Practitioner</button>'.html_safe, new_practitioner_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Basic Tables end -->

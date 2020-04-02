@@ -1,0 +1,52 @@
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :employees do %>
+active
+<% end %>
+
+<!-- information start -->
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6 col-12 ">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title mb-2">About</div>
+      </div>
+      <div class="card-body">
+
+        <div class="card-text">
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Name</dt>
+            <dd class="col-sm-9"> <%= @employee.name %></dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Date of Birth</dt>
+            <dd class="col-sm-9"> <%= @employee.dob %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Gender</dt>
+            <dd class="col-sm-9"> <%= @employee.gender %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Address</dt>
+            <dd class="col-sm-9"> <%= @employee.address %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Personal Number</dt>
+            <dd class="col-sm-9"> <%= @employee.pn %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">NationalID</dt>
+            <dd class="col-sm-9"> <%= @employee.national_id %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Workplace</dt>
+            <dd class="col-sm-9"> <%= @employee.workplace.name %></dd>
+          </dl>
+        </div>
+
+        <%= link_to 'Edit', edit_employee_path(@employee) %> |
+        <%= link_to 'Back', employees_path %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :workplaces do %>
+active
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<!-- information start -->
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6 col-12 ">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title mb-2">About</div>
+      </div>
+      <div class="card-body">
+        <div class="card-text">
+
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Name</dt>
+            <dd class="col-sm-9"><%= @workplace.name %></dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Registration</dt>
+            <dd class="col-sm-9"><%= @workplace.registration %></dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Location</dt>
+            <dd class="col-sm-9"><%= @workplace.location %></dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Phone</dt>
+            <dd class="col-sm-9"><%= @workplace.phone %></dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Address</dt>
+            <dd class="col-sm-9"><%= @workplace.address %></dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Email</dt>
+            <dd class="col-sm-9"><%= @workplace.email %></dd>
+          </dl>
+          <%= link_to 'Edit', edit_workplace_path(@workplace) %> |
+          <%= link_to 'Back', workplaces_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

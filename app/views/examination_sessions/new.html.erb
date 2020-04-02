@@ -1,0 +1,10 @@
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :examination_sessions do %>
+active
+<% end %>
+
+<h1>New Examination Session</h1>
+
+<%= render 'form', examination_session: @examination_session %>
+
+<%= link_to 'Back', examination_sessions_path %>
