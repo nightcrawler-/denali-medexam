@@ -1,32 +1,80 @@
-<%= form_with(model: examination_session, local: true) do |form| %>
-  <% if examination_session.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(examination_session.errors.count, "error") %> prohibited this examination_session from being saved:</h2>
+<!-- // Basic Horizontal form layout section start -->
+<div class="row d-flex justify-content-center">
 
-      <ul>
-        <% examination_session.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="col-md-6 col-12">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-body">
+
+          <%= form_with(model: examination_session, local: true, class: "form form-horizontal") do |form| %>
+          <% if examination_session.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(examination_session.errors.count, "error") %> prohibited this examination_session from being saved:</h2>
+
+            <ul>
+              <% examination_session.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+          <div class="form-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> <%= form.label :date_of_exam %> </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.date_select :date_of_exam, class: "custom-select" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> <%= form.label :examination_type %>
+                    </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.text_field :examination_type, class: "form-control", placeholder: "Examination Type" %>
+                      <div class="form-control-position">
+                        <i class="feather icon-lock"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> <%= form.label :workplace %>
+                    </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <fieldset class="form-group">
+                        <%= form.collection_select(:workplace_id, Workplace.all, :id, :name, {}, {:class=>'custom-select'}) %>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8 offset-md-4">
+                <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
+                <button type="reset" class="btn btn-outline-warning mr-1 mb-1">Reset</button>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :date_of_exam %>
-    <%= form.date_select :date_of_exam %>
   </div>
-
-  <div class="field">
-    <%= form.label :examination_type %>
-    <%= form.text_field :examination_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :workplace_id %>
-    <%= form.text_field :workplace_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
+<!-- // Basic Horizontal form layout section end -->
