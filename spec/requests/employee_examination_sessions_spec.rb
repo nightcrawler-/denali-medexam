@@ -15,6 +15,7 @@
 RSpec.describe "/employee_examination_sessions", type: :request do
   # EmployeeExaminationSession. As you add validations to EmployeeExaminationSession, be sure to
   # adjust the attributes here as well.
+
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
   }
