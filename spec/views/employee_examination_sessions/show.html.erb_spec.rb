@@ -8,8 +8,8 @@ RSpec.describe "employee_examination_sessions/show", type: :view do
       fp: "Fp",
       lmp: "Lmp",
       remarks: "Remarks",
-      employee_id: "",
-      session_id: ""
+      employee: Employee.new,
+      examination_session: ExaminationSession.new
     ))
   end
 

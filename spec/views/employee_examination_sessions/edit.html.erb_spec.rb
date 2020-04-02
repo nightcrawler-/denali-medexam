@@ -8,8 +8,9 @@ RSpec.describe "employee_examination_sessions/edit", type: :view do
       fp: "MyString",
       lmp: "MyString",
       remarks: "MyString",
-      employee_id: "",
-      session_id: ""
+      employee: Employee.new,
+      examination_session: ExaminationSession.new
+
     ))
   end
 

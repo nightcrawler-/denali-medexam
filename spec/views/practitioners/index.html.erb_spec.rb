@@ -30,7 +30,7 @@ RSpec.describe "practitioners/index", type: :view do
     render
     assert_select "tr>td", text: "Name".to_s, count: 2
     assert_select "tr>td", text: "Phone".to_s, count: 2
-    assert_select "tr>td", text: "Email".to_s, count: 2
+    assert_select "tr>td", text: "me@me".to_s, count: 1
     assert_select "tr>td", text: "Registration".to_s, count: 2
     assert_select "tr>td", text: "Address".to_s, count: 2
     assert_select "tr>td", text: "Fax".to_s, count: 2

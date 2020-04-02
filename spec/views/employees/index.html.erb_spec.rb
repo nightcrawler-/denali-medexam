@@ -5,19 +5,21 @@ RSpec.describe "employees/index", type: :view do
     assign(:employees, [
       Employee.create!(
         address: "Address",
-        gender: 2,
+        gender: "female",
         name: "Name",
         pn: "Pn",
         national_id: "National",
-        workplace_id: ""
+        workplace: Workplace.new,
+        dob: Date.yesterday
       ),
       Employee.create!(
         address: "Address",
-        gender: 2,
+        gender: "male",
         name: "Name",
         pn: "Pn",
-        national_id: "National",
-        workplace_id: ""
+        national_id: "National3",
+        workplace: Workplace.new,
+        dob: Date.yesterday
       )
     ])
   end
@@ -25,10 +27,10 @@ RSpec.describe "employees/index", type: :view do
   it "renders a list of employees" do
     render
     assert_select "tr>td", text: "Address".to_s, count: 2
-    assert_select "tr>td", text: 2.to_s, count: 2
+    assert_select "tr>td", text: "male".to_s, count: 1
     assert_select "tr>td", text: "Name".to_s, count: 2
     assert_select "tr>td", text: "Pn".to_s, count: 2
-    assert_select "tr>td", text: "National".to_s, count: 2
-    assert_select "tr>td", text: "".to_s, count: 2
+    assert_select "tr>td", text: "National".to_s, count: 1
+    assert_select "tr>td", text: "female".to_s, count: 1
   end
 end

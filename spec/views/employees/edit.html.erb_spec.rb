@@ -8,7 +8,8 @@ RSpec.describe "employees/edit", type: :view do
       name: "MyString",
       pn: "MyString",
       national_id: "MyString",
-      workplace_id: ""
+      workplace: Workplace.new,
+      dob: Date.yesterday
     ))
   end
 

@@ -5,11 +5,13 @@ RSpec.describe "examination_sessions/index", type: :view do
     assign(:examination_sessions, [
       ExaminationSession.create!(
         examination_type: "Examination Type",
-        workplace_id: ""
+        workplace: Workplace.new,
+        date_of_exam: Date.yesterday
       ),
       ExaminationSession.create!(
         examination_type: "Examination Type",
-        workplace_id: ""
+        workplace: Workplace.new,
+        date_of_exam: Date.yesterday
       )
     ])
   end

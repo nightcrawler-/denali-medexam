@@ -9,8 +9,9 @@ RSpec.describe "employee_examination_sessions/index", type: :view do
         fp: "Fp",
         lmp: "Lmp",
         remarks: "Remarks",
-        employee_id: "",
-        session_id: ""
+        employee: Employee.new,
+        examination_session: ExaminationSession.new
+
       ),
       EmployeeExaminationSession.create!(
         bp: 2.5,
@@ -18,8 +19,9 @@ RSpec.describe "employee_examination_sessions/index", type: :view do
         fp: "Fp",
         lmp: "Lmp",
         remarks: "Remarks",
-        employee_id: "",
-        session_id: ""
+        employee: Employee.new,
+        examination_session: ExaminationSession.new
+
       )
     ])
   end
@@ -31,7 +33,5 @@ RSpec.describe "employee_examination_sessions/index", type: :view do
     assert_select "tr>td", text: "Fp".to_s, count: 2
     assert_select "tr>td", text: "Lmp".to_s, count: 2
     assert_select "tr>td", text: "Remarks".to_s, count: 2
-    assert_select "tr>td", text: "".to_s, count: 2
-    assert_select "tr>td", text: "".to_s, count: 2
   end
 end
