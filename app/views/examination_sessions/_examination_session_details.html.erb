@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Basic Tables start -->
+<div class="row" id="basic-table">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Showing all employees of <%= examination_session.workplace.name %>. Current
+                    examination_session date is
+                    <%= examination_session.date_of_exam %></h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <p class="card-text">All employees of the company owning this examination examination_session. You
+                        can add them to the
+                        list, all factors remaining constant, by click on the 'add' option</p>
+                    <!-- Table with outer spacing -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>National ID</th>
+                                    <th>Name</th>
+                                    <th>Age (YRS)</th>
+                                    <th>Gender</th>
+                                    <th>Personal Number</th>
+                                    <th>Status</th>
+                                    <th colspan="3"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <% examination_session.workplace.employees.each do |employee| %>
+
+                                <% puts 'employee first examination_session is ' + employee.employee_sessions.first.inspect %>
+                                <% puts 'examination_session is ' + examination_session.inspect %>
+
+                                <% @is_in_session = employee.employee_sessions.include?(examination_session.employee_sessions.last) %>
+                                </td>
+
+                                <tr>
+                                    <td><%= employee.national_id %></td>
+                                    <td><%= employee.name %></td>
+                                    <td><%= employee.age %></td>
+                                    <td><%= employee.gender %></td>
+                                    <td><%= employee.pn %></td>
+                                    <td>
+                                        <div class="chip <%= @is_in_session? 'chip-primary' : '' %> mr-1">
+                                            <div class="chip-body">
+                                                <span
+                                                    class="chip-text"><%= @is_in_session? 'Loaded' : 'Unavailable' %></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><%= link_to 'Show', employee %></td>
+                                    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+                                    <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                    </td>
+                                </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <%= link_to '<button type="button" class="btn btn-outline-dark mr-1 mb-1">New Employee</button>'.html_safe, new_employee_path %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
