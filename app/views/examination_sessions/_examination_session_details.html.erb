@@ -32,10 +32,10 @@
                             <tbody>
                                 <% examination_session.workplace.employees.each do |employee| %>
 
-                                <% puts 'employee first examination_session is ' + employee.employee_sessions.first.inspect %>
+                                <% puts 'employee first examination_session is ' + employee.employee_examination_sessions.first.inspect %>
                                 <% puts 'examination_session is ' + examination_session.inspect %>
 
-                                <% @is_in_session = employee.employee_sessions.include?(examination_session.employee_sessions.last) %>
+                                <% @is_in_session = employee.employee_examination_sessions.include?(examination_session.employee_examination_sessions.last) %>
                                 </td>
 
                                 <tr>
