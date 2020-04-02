@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_171745) do
+ActiveRecord::Schema.define(version: 2020_04_02_191421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "employee_examination_sessions", force: :cascade do |t|
+    t.float "bp"
+    t.float "btw"
+    t.string "fp"
+    t.string "lmp"
+    t.string "remarks"
+    t.bigint "employee_id"
+    t.bigint "session_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "address"
+    t.date "dob"
+    t.integer "gender"
+    t.string "name"
+    t.string "pn"
+    t.string "national_id"
+    t.bigint "workplace_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "examination_sessions", force: :cascade do |t|
+    t.date "date_of_exam"
+    t.string "examination_type"
+    t.bigint "workplace_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "practitioners", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "email"
+    t.string "registration"
+    t.string "address"
+    t.string "fax"
+    t.string "location"
+    t.string "signature"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,6 +80,18 @@ ActiveRecord::Schema.define(version: 2020_04_02_171745) do
     t.text "object"
     t.datetime "created_at"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  end
+
+  create_table "workplaces", force: :cascade do |t|
+    t.string "address"
+    t.string "email"
+    t.string "location"
+    t.string "name"
+    t.string "phone"
+    t.string "registration"
+    t.bigint "practitioner_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

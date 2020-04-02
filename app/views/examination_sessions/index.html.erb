@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Examination Sessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date of exam</th>
+      <th>Examination type</th>
+      <th>Workplace</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @examination_sessions.each do |examination_session| %>
+      <tr>
+        <td><%= examination_session.date_of_exam %></td>
+        <td><%= examination_session.examination_type %></td>
+        <td><%= examination_session.workplace_id %></td>
+        <td><%= link_to 'Show', examination_session %></td>
+        <td><%= link_to 'Edit', edit_examination_session_path(examination_session) %></td>
+        <td><%= link_to 'Destroy', examination_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Examination Session', new_examination_session_path %>

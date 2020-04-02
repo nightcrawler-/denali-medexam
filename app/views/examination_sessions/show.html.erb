@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date of exam:</strong>
+  <%= @examination_session.date_of_exam %>
+</p>
+
+<p>
+  <strong>Examination type:</strong>
+  <%= @examination_session.examination_type %>
+</p>
+
+<p>
+  <strong>Workplace:</strong>
+  <%= @examination_session.workplace_id %>
+</p>
+
+<%= link_to 'Edit', edit_examination_session_path(@examination_session) %> |
+<%= link_to 'Back', examination_sessions_path %>
