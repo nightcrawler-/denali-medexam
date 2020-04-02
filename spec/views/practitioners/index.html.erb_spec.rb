@@ -6,7 +6,7 @@ RSpec.describe "practitioners/index", type: :view do
       Practitioner.create!(
         name: "Name",
         phone: "Phone",
-        email: "Email",
+        email: "me@you",
         registration: "Registration",
         address: "Address",
         fax: "Fax",
@@ -16,7 +16,7 @@ RSpec.describe "practitioners/index", type: :view do
       Practitioner.create!(
         name: "Name",
         phone: "Phone",
-        email: "Email",
+        email: "me@me",
         registration: "Registration",
         address: "Address",
         fax: "Fax",

@@ -5,7 +5,7 @@ RSpec.describe "practitioners/show", type: :view do
     @practitioner = assign(:practitioner, Practitioner.create!(
       name: "Name",
       phone: "Phone",
-      email: "Email",
+      email: "me@me",
       registration: "Registration",
       address: "Address",
       fax: "Fax",

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: sessions
+# Table name: examination_sessions
 #
 #  id               :bigint           not null, primary key
 #  date_of_exam     :date

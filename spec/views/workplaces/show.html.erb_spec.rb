@@ -4,12 +4,12 @@ RSpec.describe "workplaces/show", type: :view do
   before(:each) do
     @workplace = assign(:workplace, Workplace.create!(
       address: "Address",
-      email: "Email",
+      email: "me@me",
       location: "Location",
       name: "Name",
       phone: "Phone",
       registration: "Registration",
-      practitioner_id: ""
+      practitioner: Practitioner.create
     ))
   end
 

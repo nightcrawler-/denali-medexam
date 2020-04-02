@@ -4,22 +4,22 @@ RSpec.describe "workplaces/index", type: :view do
   before(:each) do
     assign(:workplaces, [
       Workplace.create!(
-        address: "Address",
-        email: "Email",
-        location: "Location",
-        name: "Name",
-        phone: "Phone",
-        registration: "Registration",
-        practitioner_id: ""
+        address: "MyString",
+        email: "me2@gmail.com",
+        location: "MyString",
+        name: "MyString",
+        phone: "MyString",
+        registration: "MyString",
+        practitioner: Practitioner.create!  
       ),
       Workplace.create!(
-        address: "Address",
-        email: "Email",
-        location: "Location",
-        name: "Name",
-        phone: "Phone",
-        registration: "Registration",
-        practitioner_id: ""
+        address: "MyString",
+        email: "me@gmail.com",
+        location: "MyString",
+        name: "MyStrinXg",
+        phone: "MyString",
+        registration: "MyString",
+        practitioner: Practitioner.create! 
       )
     ])
   end

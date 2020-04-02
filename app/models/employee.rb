@@ -27,7 +27,6 @@ class Employee < ApplicationRecord
     belongs_to :workplace
     has_many :employee_examination_sessions, dependent: :destroy
     has_many :examination_sessions, through: :employee_examination_sessions
-    
 
     ############### Some 'helper' methods #################
 
