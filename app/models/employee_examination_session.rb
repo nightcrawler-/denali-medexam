@@ -14,4 +14,13 @@
 #  session_id  :bigint
 #
 class EmployeeExaminationSession < ApplicationRecord
+
+    ############## Validations #################
+    validates_presence_of :remarks
+
+    ############## Associations ################
+
+    belongs_to :employee
+    belongs_to :examination_session
+
 end

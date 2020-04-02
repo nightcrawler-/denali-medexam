@@ -15,4 +15,14 @@
 #  updated_at   :datetime         not null
 #
 class Practitioner < ApplicationRecord
+
+    ############### VALIDATIONS ###################
+
+    validates :email, email: true, uniqueness: true
+
+    validates_presence_of :address, :location, :name, :registration, :phone
+
+    ############## ASSOCIATIONS ####################
+
+    has_many :workplaces, dependent: :destroy
 end

@@ -14,4 +14,16 @@
 #  practitioner_id :bigint
 #
 class Workplace < ApplicationRecord
+
+    ################# Validations #######################
+    validates :email, email: true, uniqueness: true
+    validates :name, presence: true, uniqueness: true
+
+    validates_presence_of :address, :location, :phone, :registration
+
+    ############## ASSOCIATIONS #########################
+
+    belongs_to :practitioner
+    has_many :employees, dependent: :destroy
+    has_many :examination_sessions
 end

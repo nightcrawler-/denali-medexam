@@ -17,5 +17,59 @@
 require 'rails_helper'
 
 RSpec.describe Practitioner, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  subject { described_class.new(
+              name: "Jane",
+              email: "user@yahoo.com",
+              registration: "woah",
+              location: "nyef",
+              address: "miau",
+              phone: "072345522")
+          }
+
+  describe "Validations" do 
+
+    it "is valid with valid attributes" do
+      expect(subject).to be_valid
+    end
+
+    it "is not valid without a name" do
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without an email" do
+      subject.email = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without a valid" do
+      subject.email = "nonesense email"
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without a registration" do
+      subject.registration = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without an address" do
+      subject.address = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without a location" do
+      subject.location = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without a phone number" do
+      subject.phone = nil
+      expect(subject).to_not be_valid
+    end
+  end
+
+  describe "Asscociations" do
+    it { should have_many(:workplaces) }
+  end
 end
