@@ -1,57 +1,130 @@
-<%= form_with(model: practitioner, local: true) do |form| %>
-  <% if practitioner.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(practitioner.errors.count, "error") %> prohibited this practitioner from being saved:</h2>
+<!-- // Basic Horizontal form layout section start -->
+<div class="row d-flex justify-content-center">
 
-      <ul>
-        <% practitioner.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="col-md-6 col-12">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-body">
+
+          <%= form_with(model: practitioner, local: true, class: "form form-horizontal") do |form| %>
+          <% if practitioner.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(practitioner.errors.count, "error") %> prohibited this practitioner from being saved:</h2>
+
+            <ul>
+              <% practitioner.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+          <div class="form-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> <%= form.label :name %> </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
+                      <div class="form-control-position">
+                        <i class="feather icon-user"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> <%= form.label :address %> </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.text_field :address, class: "form-control", placeholder: "Address" %>
+                      <div class="form-control-position">
+                        <i class="feather icon-mail"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> <%= form.label :registration %>
+                    </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.text_field :registration, class: "form-control", placeholder: "Registration No." %>
+                      <div class="form-control-position">
+                        <i class="feather icon-smartphone"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> <%= form.label :location %>
+                    </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.text_field :location, class: "form-control", placeholder: "Location" %>
+                      <div class="form-control-position">
+                        <i class="feather icon-lock"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> <%= form.label :email %>
+                    </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.text_field :email, class: "form-control", placeholder: "Email" %>
+                      <div class="form-control-position">
+                        <i class="feather icon-lock"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> <%= form.label :fax %>
+                    </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.text_field :fax, class: "form-control", placeholder: "Fax" %>
+                      <div class="form-control-position">
+                        <i class="feather icon-lock"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+     
+              <div class="col-md-8 offset-md-4">
+                <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
+                <button type="reset" class="btn btn-outline-warning mr-1 mb-1">Reset</button>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :registration %>
-    <%= form.text_field :registration %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fax %>
-    <%= form.text_field :fax %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :signature %>
-    <%= form.text_field :signature %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
+<!-- // Basic Horizontal form layout section end -->

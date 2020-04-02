@@ -1,4 +1,9 @@
-<h1>Editing Practitioner</h1>
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :practitioners do %>
+active
+<% end %>
+
+<h4 class="card-title">Edit practitioner</h4>
 
 <%= render 'form', practitioner: @practitioner %>
 

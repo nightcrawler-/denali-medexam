@@ -1,44 +1,51 @@
-<p id="notice"><%= notice %></p>
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :practitioners do %>
+active
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @practitioner.name %>
-</p>
+<!-- information start -->
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6 col-12 ">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title mb-2">About</div>
+      </div>
+      <div class="card-body">
+        <div class="card-text">
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Name</dt>
+            <dd class="col-sm-9"> <%= @practitioner.name %></dd>
+          </dl>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @practitioner.phone %>
-</p>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Address</dt>
+            <dd class="col-sm-9"> <%= @practitioner.address %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Registration</dt>
+            <dd class="col-sm-9"> <%= @practitioner.registration %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Location</dt>
+            <dd class="col-sm-9"> <%= @practitioner.location %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Email</dt>
+            <dd class="col-sm-9"> <%= @practitioner.email %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Phone</dt>
+            <dd class="col-sm-9"> <%= @practitioner.phone %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Fax</dt>
+            <dd class="col-sm-9"> <%= @practitioner.fax %></dd>
+          </dl>
+        </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @practitioner.email %>
-</p>
-
-<p>
-  <strong>Registration:</strong>
-  <%= @practitioner.registration %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @practitioner.address %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @practitioner.fax %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @practitioner.location %>
-</p>
-
-<p>
-  <strong>Signature:</strong>
-  <%= @practitioner.signature %>
-</p>
-
-<%= link_to 'Edit', edit_practitioner_path(@practitioner) %> |
-<%= link_to 'Back', practitioners_path %>
+        <%= link_to 'Edit', edit_practitioner_path(@practitioner) %> |
+        <%= link_to 'Back', practitioners_path %>
+      </div>
+    </div>
+  </div>
+</div>
