@@ -44,13 +44,13 @@
 #  updated_at   :datetime         not null
 
 practitioner = Practitioner.create!(
-                                    address: "P.O. Box 3310-10200s, Lisbit",
-                                    email: "juan@carslo2s.com",
-                                    fax: "100s05",
-                                    location: "Naursu",
-                                    name: "Missey X",
-                                    phone: "07s2300564",
-                                    registration: "W1s590"
+                                    address: "P.O. Box 3310-20100, Nakuru",
+                                    email: "dromala@yahoo.com",
+                                    fax: "051 2216358",
+                                    location: "Regional DOSHS HQS Nakuru",
+                                    name: "Dr. Fred O. Omala",
+                                    phone: "051 2216358",
+                                    registration: "A3262"
 )
 
 workplaces = JSON.parse(File.read(Rails.root.join('db').to_s + '/workplace-employees.json'))
