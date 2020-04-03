@@ -34,23 +34,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12">
-              <div class="form-group row">
-                <div class="col-md-4">
-                  <span> <%= form.label :examination_session %>
-                  </span>
-                </div>
-                <div class="col-md-8">
-                  <div class="position-relative has-icon-left">
-                    <%= form.text_field :examination_session_id, class: "form-control", placeholder: "Examination Session ID" %>
-                    <div class="form-control-position">
-                      <i class="feather icon-lock"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            <%= form.hidden_field :examination_session_id, class: "form-control", placeholder: "Examination Session ID" %>
             <div class="col-12">
               <div class="form-group row">
                 <div class="col-md-4">

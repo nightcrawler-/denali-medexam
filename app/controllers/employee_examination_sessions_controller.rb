@@ -15,6 +15,8 @@ class EmployeeExaminationSessionsController < ApplicationController
   # GET /employee_examination_sessions/new
   def new
     @employee_examination_session = EmployeeExaminationSession.new
+    # Allows to create employee examination session from existing examination session, might refie later
+    @employee_examination_session.examination_session_id = params[:examination_session_id]
   end
 
   # GET /employee_examination_sessions/1/edit
@@ -27,8 +29,8 @@ class EmployeeExaminationSessionsController < ApplicationController
     @employee_examination_session = EmployeeExaminationSession.new(employee_examination_session_params)
 
     respond_to do |format|
-      if @employee_examination_session.save
-        format.html { redirect_to @employee_examination_session, notice: 'Employee examination session was successfully created.' }
+      if @employee_examination_session.save # Redirect to examination session edit to add the next employee
+        format.html { redirect_to edit_examination_session_path(@employee_examination_session.examination_session), notice: 'Employee examination session was successfully created.' }
         format.json { render :show, status: :created, location: @employee_examination_session }
       else
         format.html { render :new }

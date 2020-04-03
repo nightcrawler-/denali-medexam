@@ -16,7 +16,9 @@
 class EmployeeExaminationSession < ApplicationRecord
 
     ############## Validations #################
+    
     validates_presence_of :remarks
+    validates_uniqueness_of :employee_id, scope: :examination_session_id
 
     ############## Associations ################
 
