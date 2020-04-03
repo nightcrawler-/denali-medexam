@@ -42,9 +42,11 @@ active
 
                   <td><%= link_to 'Show', employee_examination_session %></td>
                   <td><%= link_to 'Edit', edit_employee_examination_session_path(employee_examination_session) %></td>
+                  <% if current_user.has_role?(:admin) %>
                   <td>
                     <%= link_to 'Destroy', employee_examination_session, method: :delete, data: { confirm: 'Are you sure?' } %>
                   </td>
+                  <% end %>
                 </tr>
                 <% end %>
               </tbody>

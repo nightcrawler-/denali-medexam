@@ -50,6 +50,8 @@ gem 'rspec_junit_formatter'
 # For pagination
 gem 'will_paginate', '~> 3.1.0'
 
+# Roles -- TODO security flaw initially to hide some actions all together, they might be accessed via direct urls though
+gem "rolify"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

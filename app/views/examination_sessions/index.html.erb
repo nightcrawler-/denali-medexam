@@ -12,7 +12,8 @@ active
       </div>
       <div class="card-content">
         <div class="card-body">
-          <p class="card-text">A list of Examination Sessions recorded in the past. You can save a examination_session and resume progress at a
+          <p class="card-text">A list of Examination Sessions recorded in the past. You can save a examination_session
+            and resume progress at a
             later time</p>
           <!-- Table with outer spacing -->
           <div class="table-responsive">
@@ -34,7 +35,12 @@ active
                   <td><%= examination_session.examination_type %></td>
                   <td><%= link_to 'Show', examination_session %></td>
                   <td><%= link_to 'Edit', edit_examination_session_path(examination_session) %></td>
-                  <td><%= link_to 'Destroy', examination_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+                  <% if current_user.has_role?(:admin) %>
+                  <td><%= link_to 'Destroy', examination_session, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </td>
+                  <% end %>
+                  
                 </tr>
                 <% end %>
               </tbody>
