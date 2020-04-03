@@ -30,7 +30,7 @@
                   </span>
                 </div>
                 <div class="col-md-8">
-                  <%= form.collection_select(:employee_id, @examination_session.all_employees, :id, :name, {}, {:class=>'select2 form-control'}) %>
+                  <%= form.collection_select(:employee_id, @examination_session.unmarked_employees, :id, :name, {}, {:class=>'select2 form-control'}) %>
                 </div>
               </div>
             </div>
