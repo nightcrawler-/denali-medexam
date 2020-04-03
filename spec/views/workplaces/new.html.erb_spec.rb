@@ -9,7 +9,7 @@ RSpec.describe "workplaces/new", type: :view do
       name: "MyString",
       phone: "MyString",
       registration: "MyString",
-      practitioner_id: ""
+      practitioner_id: "9"
     ))
   end
 

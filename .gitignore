@@ -31,4 +31,4 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ignore coverage files
-/coverage
+/coverage/*

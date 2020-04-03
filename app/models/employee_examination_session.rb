@@ -7,7 +7,7 @@
 #  btw                    :float
 #  fp                     :string
 #  lmp                    :string
-#  remarks                :string
+#  remarks                :string           default("PHYSICALLY FIT")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  employee_id            :bigint
@@ -16,7 +16,9 @@
 class EmployeeExaminationSession < ApplicationRecord
 
     ############## Validations #################
+    
     validates_presence_of :remarks
+    validates_uniqueness_of :employee_id, scope: :examination_session_id
 
     ############## Associations ################
 

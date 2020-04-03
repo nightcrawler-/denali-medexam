@@ -3,17 +3,16 @@
 active
 <% end %>
 
-<p id="notice"><%= notice %></p>
 <!-- Basic Tables start -->
 <div class="row" id="basic-table">
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Sessions</h4>
+        <h4 class="card-title">Examination Sessions</h4>
       </div>
       <div class="card-content">
         <div class="card-body">
-          <p class="card-text">A list of sessions recorded in the past. You can save a examination_session and resume progress at a
+          <p class="card-text">A list of Examination Sessions recorded in the past. You can save a examination_session and resume progress at a
             later time</p>
           <!-- Table with outer spacing -->
           <div class="table-responsive">
@@ -34,13 +33,18 @@ active
                   <td><%= examination_session.workplace.name %></td>
                   <td><%= examination_session.examination_type %></td>
                   <td><%= link_to 'Show', examination_session %></td>
-                  <td><%= link_to 'Edit', edit_session_path(examination_session) %></td>
+                  <td><%= link_to 'Edit', edit_examination_session_path(examination_session) %></td>
                   <td><%= link_to 'Destroy', examination_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
                 <% end %>
               </tbody>
             </table>
           </div>
+          <p>
+            <div class="digg_pagination">
+              <%= will_paginate @workplaces, :container => false %>
+            </div>
+          </p>
           <%= link_to '<button type="button" class="btn btn-outline-dark mr-1 mb-1">New examination session</button>'.html_safe, new_examination_session_path %>
         </div>
       </div>

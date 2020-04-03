@@ -31,6 +31,18 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Validate email addresses
 gem 'email_validator'
 
+# To keep an audit trail, currently for exploration: bundle exec rails generate paper_trail:install [--with-changes]
+gem 'paper_trail'
+
+gem 'paper_trail_scrapbook'
+
+# Authentication/Authorization things 
+gem 'devise'
+
+# For pagination
+gem 'will_paginate', '~> 3.1.0'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -52,12 +64,6 @@ group :development, :test do
 
   gem 'rails-controller-testing'
 
-  # To keep an audit trail, currently for exploration: bundle exec rails generate paper_trail:install [--with-changes]
-  gem 'paper_trail'
-
-  # Authentication/Authorization things 
-  gem 'devise'
-
 end
 
 group :development do
@@ -73,6 +79,10 @@ group :development do
   gem 'rubocop'
 
   gem 'rails-erd'
+
+  # For swagger documentation
+  gem 'rswag'
+  
 end
 
 group :test do

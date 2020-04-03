@@ -4,7 +4,7 @@ class ExaminationSessionsController < ApplicationController
   # GET /examination_sessions
   # GET /examination_sessions.json
   def index
-    @examination_sessions = ExaminationSession.all
+    @examination_sessions = ExaminationSession.paginate(page: params[:page])
   end
 
   # GET /examination_sessions/1

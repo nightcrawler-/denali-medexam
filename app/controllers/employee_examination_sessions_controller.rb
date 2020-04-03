@@ -4,7 +4,7 @@ class EmployeeExaminationSessionsController < ApplicationController
   # GET /employee_examination_sessions
   # GET /employee_examination_sessions.json
   def index
-    @employee_examination_sessions = EmployeeExaminationSession.all
+    @employee_examination_sessions = EmployeeExaminationSession.paginate(page: params[:page])
   end
 
   # GET /employee_examination_sessions/1
@@ -15,6 +15,12 @@ class EmployeeExaminationSessionsController < ApplicationController
   # GET /employee_examination_sessions/new
   def new
     @employee_examination_session = EmployeeExaminationSession.new
+
+    # Allows to create employee examination session from existing examination session, might refie later
+    @employee_examination_session.examination_session_id = params[:examination_session_id]
+
+    # We'll need to get the current exam session as well, in order to get employees for workplace in session
+    @examination_session = ExaminationSession.find(params[:examination_session_id])
   end
 
   # GET /employee_examination_sessions/1/edit
@@ -27,8 +33,8 @@ class EmployeeExaminationSessionsController < ApplicationController
     @employee_examination_session = EmployeeExaminationSession.new(employee_examination_session_params)
 
     respond_to do |format|
-      if @employee_examination_session.save
-        format.html { redirect_to @employee_examination_session, notice: 'Employee examination session was successfully created.' }
+      if @employee_examination_session.save # Redirect to examination session edit to add the next employee
+        format.html { redirect_to new_employee_examination_session_path(:examination_session_id => @employee_examination_session.examination_session.id), notice: 'Employee examination session was successfully created.' }
         format.json { render :show, status: :created, location: @employee_examination_session }
       else
         format.html { render :new }
@@ -69,6 +75,6 @@ class EmployeeExaminationSessionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employee_examination_session_params
-      params.require(:employee_examination_session).permit(:bp, :btw, :fp, :lmp, :remarks, :employee_id, :session_id)
+      params.require(:employee_examination_session).permit(:bp, :btw, :fp, :lmp, :remarks, :employee_id, :examination_session_id)
     end
 end

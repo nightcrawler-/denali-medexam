@@ -7,7 +7,7 @@
 #  btw                    :float
 #  fp                     :string
 #  lmp                    :string
-#  remarks                :string
+#  remarks                :string           default("PHYSICALLY FIT")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  employee_id            :bigint
@@ -17,7 +17,25 @@ require 'rails_helper'
 
 RSpec.describe EmployeeExaminationSession, type: :model do
 
-  subject {described_class.new(remarks: "Good girl", employee: Employee.new, examination_session: ExaminationSession.new)}
+  let(:employee) {
+                  Employee.create(
+                    gender: "male",
+                    name: "James",
+                    national_id: "189943734",
+                    dob: Date.yesterday,
+                    workplace: Workplace.new
+                 )
+               }
+
+  let(:examination_session) { 
+                  ExaminationSession.create(
+                    workplace: Workplace.new,
+                    examination_type: "GE",
+                    date_of_exam: Date.yesterday
+                  )
+   }
+
+  subject {described_class.new(remarks: "Good girl", employee: employee, examination_session: examination_session)}
 
   describe "Validations" do
 
@@ -27,6 +45,11 @@ RSpec.describe EmployeeExaminationSession, type: :model do
 
     it "should be valid without remarks" do 
       subject.remarks = nil
+      expect(subject).to_not be_valid
+    end
+
+    it "should not have duplicate employee/examination session combinations" do
+      subject.save!
       expect(subject).to_not be_valid
     end
 

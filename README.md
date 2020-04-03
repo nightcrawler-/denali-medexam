@@ -1,6 +1,6 @@
 # Med Exam
 
-[![CircleCI](https://circleci.com/gh/nightcrawler-/medexam.svg?style=shield&circle-token=0ad5ab3a7ed5a25b7125d9cd33e8a6cb19b3492a)](https://circleci.com/gh/nightcrawler-/medexam)
+[![CircleCI](https://circleci.com/gh/nightcrawler-/denali-medexam.svg?style=shield&circle-token=9d7787382e040b45ca013ff710f1dfe29c1a8d5f)](https://circleci.com/gh/nightcrawler-/denali-medexam)
 
 Reboot of the original MS Access based Med-Exam app. Automates collection, persistence and dissemination of medical records.
 
@@ -101,3 +101,7 @@ rails db:migrate
 
 rails server
 ```
+
+### Misc
+
+In the event you need to drop and recreate the db but access is disabled due to other users, force restart postgres `sudo systemctl restart postgresql`

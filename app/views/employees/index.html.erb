@@ -46,9 +46,12 @@ active
                 <% end %>
               </tbody>
             </table>
-
-
           </div>
+          <p>
+            <div class="digg_pagination">
+              <%= will_paginate @workplaces, :container => false %>
+            </div>
+          </p>
           <%= link_to '<button type="button" class="btn btn-outline-dark mr-1 mb-1">New Employee</button>'.html_safe, new_employee_path %>
         </div>
       </div>

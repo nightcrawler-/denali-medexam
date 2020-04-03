@@ -16,13 +16,15 @@
             <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class="nav-item <%= yield :dashboard %>"><a class="dropdown-toggle nav-link" href="#"><i class="feather icon-home"></i><span data-i18n="Dashboard">Dashboard</span></a>
                 </li>
-                <li class="nav-item <%= yield :practitioners %>"><a class="nav-link" href="<%= practitioners_url %>"><i class="feather icon-package"></i><span data-i18n="Apps">Practitioners</span></a>
+                <li class="nav-item <%= yield :practitioners %>"><a class="nav-link" href="<%= practitioners_url %>"><i class="feather icon-smile"></i><span data-i18n="Apps">Practitioners</span></a>
                 </li>
-                <li class="nav-item <%= yield :workplaces %>"><a class="nav-link" href="<%= workplaces_url %>" ><i class="feather icon-layers"></i><span data-i18n="UI Elements">Workplaces</span></a>
+                <li class="nav-item <%= yield :workplaces %>"><a class="nav-link" href="<%= workplaces_url %>" ><i class="feather icon-clipboard"></i><span data-i18n="UI Elements">Workplaces</span></a>
                 </li>
-                <li class="nav-item <%= yield :employees %>"><a class="nav-link" href="<%= employees_url %>" ><i class="feather icon-edit-2"></i><span data-i18n="Forms &amp; Tables">Employees</span></a>
+                <li class="nav-item <%= yield :employees %>"><a class="nav-link" href="<%= employees_url %>" ><i class="feather icon-users"></i><span data-i18n="Forms &amp; Tables">Employees</span></a>
                 </li>
-                <li class="nav-item <%= yield :examination_sessions %>"><a class="nav-link" href="<%= examination_sessions_url %>" ><i class="feather icon-file"></i><span data-i18n="Pages">Sessions</span></a>
+                <li class="nav-item <%= yield :examination_sessions %>"><a class="nav-link" href="<%= examination_sessions_url %>" ><i class="feather icon-activity"></i><span data-i18n="Pages">Examination Sessions</span></a>
+                </li>
+                <li class="nav-item <%= yield :employee_examination_sessions %>"><a class="nav-link" href="<%= employee_examination_sessions_url %>" ><i class="feather icon-file"></i><span data-i18n="Pages">Employee Examination Sessions</span></a>
                 </li>
             </ul>
         </div>

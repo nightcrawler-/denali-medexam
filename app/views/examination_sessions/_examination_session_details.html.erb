@@ -5,8 +5,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Showing all employees of <%= examination_session.workplace.name %>. Current
-                    examination_session date is
+                <h4 class="card-title">Showing employees of <%= examination_session.workplace.name %> that were
+                    examined on
                     <%= examination_session.date_of_exam %></h4>
             </div>
             <div class="card-content">
@@ -30,12 +30,12 @@
                             </thead>
 
                             <tbody>
-                                <% examination_session.workplace.employees.each do |employee| %>
+                                <% examination_session.employees.each do |employee| %>
 
-                                <% puts 'employee first examination_session is ' + employee.employee_sessions.first.inspect %>
+                                <% puts 'employee first examination_session is ' + employee.employee_examination_sessions.first.inspect %>
                                 <% puts 'examination_session is ' + examination_session.inspect %>
 
-                                <% @is_in_session = employee.employee_sessions.include?(examination_session.employee_sessions.last) %>
+                                <% @is_in_session = employee.employee_examination_sessions.include?(examination_session.employee_examination_sessions.last) %>
                                 </td>
 
                                 <tr>
@@ -48,7 +48,7 @@
                                         <div class="chip <%= @is_in_session? 'chip-primary' : '' %> mr-1">
                                             <div class="chip-body">
                                                 <span
-                                                    class="chip-text"><%= @is_in_session? 'Loaded' : 'Unavailable' %></span>
+                                                    class="chip-text"><%= @is_in_session? 'examined' : 'unknown' %></span>
                                             </div>
                                         </div>
                                     </td>
@@ -63,7 +63,7 @@
 
 
                     </div>
-                    <%= link_to '<button type="button" class="btn btn-outline-dark mr-1 mb-1">New Employee</button>'.html_safe, new_employee_path %>
+                    <%= link_to '<button type="button" class="btn btn-outline-dark mr-1 mb-1">New Employee Examination Session</button>'.html_safe, new_employee_examination_session_path(:examination_session_id => examination_session.id) %>
                 </div>
             </div>
         </div>
