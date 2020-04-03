@@ -53,6 +53,9 @@ gem 'will_paginate', '~> 3.1.0'
 # Roles -- TODO security flaw initially to hide some actions all together, they might be accessed via direct urls though
 gem "rolify"
 
+# Crash Reports
+gem 'rollbar'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

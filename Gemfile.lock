@@ -212,6 +212,7 @@ GEM
       nokogiri
     rexml (3.2.4)
     rolify (5.2.0)
+    rollbar (2.24.0)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
     rspec-expectations (3.9.1)
@@ -355,6 +356,7 @@ DEPENDENCIES
   rails-controller-testing
   rails-erd
   rolify
+  rollbar
   rspec-rails
   rspec_junit_formatter
   rswag
