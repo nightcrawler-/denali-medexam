@@ -101,3 +101,7 @@ rails db:migrate
 
 rails server
 ```
+
+### Misc
+
+In the event you need to drop and recreate the db but access is disabled due to other users, force restart postgres `sudo systemctl restart postgresql`
