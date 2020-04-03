@@ -69,6 +69,6 @@ class EmployeeExaminationSessionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employee_examination_session_params
-      params.require(:employee_examination_session).permit(:bp, :btw, :fp, :lmp, :remarks, :employee_id, :examinationsession_id)
+      params.require(:employee_examination_session).permit(:bp, :btw, :fp, :lmp, :remarks, :employee_id, :examination_session_id)
     end
 end
