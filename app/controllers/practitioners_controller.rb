@@ -4,7 +4,7 @@ class PractitionersController < ApplicationController
   # GET /practitioners
   # GET /practitioners.json
   def index
-    @practitioners = Practitioner.all
+    @practitioners = Practitioner.paginate(page: params[:page])
   end
 
   # GET /practitioners/1

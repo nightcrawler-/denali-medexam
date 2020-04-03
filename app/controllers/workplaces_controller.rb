@@ -4,7 +4,7 @@ class WorkplacesController < ApplicationController
   # GET /workplaces
   # GET /workplaces.json
   def index
-    @workplaces = Workplace.all
+    @workplaces = Workplace.paginate(page: params[:page])
   end
 
   # GET /workplaces/1

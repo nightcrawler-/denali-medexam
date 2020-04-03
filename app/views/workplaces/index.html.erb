@@ -13,6 +13,8 @@ active
         <div class="card-body">
           <p class="card-text">Available workplaces.</p>
           <!-- Table with outer spacing -->
+
+
           <div class="table-responsive">
             <table class="table">
               <thead>
@@ -43,8 +45,12 @@ active
                 <% end %>
               </tbody>
             </table>
-
           </div>
+          <p>
+            <div class="digg_pagination">
+              <%= will_paginate @workplaces, :container => false %>
+            </div>
+          </p>
           <%= link_to '<button type="button" class="btn btn-outline-dark mr-1 mb-1">New Workplace</button>'.html_safe, new_workplace_path %>
         </div>
       </div>

@@ -4,7 +4,7 @@ class EmployeeExaminationSessionsController < ApplicationController
   # GET /employee_examination_sessions
   # GET /employee_examination_sessions.json
   def index
-    @employee_examination_sessions = EmployeeExaminationSession.all
+    @employee_examination_sessions = EmployeeExaminationSession.paginate(page: params[:page])
   end
 
   # GET /employee_examination_sessions/1
