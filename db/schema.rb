@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_203122) do
+ActiveRecord::Schema.define(version: 2020_04_03_062341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_203122) do
     t.float "btw"
     t.string "fp"
     t.string "lmp"
-    t.string "remarks"
+    t.string "remarks", default: "PHYSICALLY FIT"
     t.bigint "employee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

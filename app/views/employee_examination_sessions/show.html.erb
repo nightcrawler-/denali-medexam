@@ -1,39 +1,50 @@
-<p id="notice"><%= notice %></p>
+<!-- Doing this to  make sure the navigation bar hightlights the correct tabs -->
+<% content_for :employee_examination_sessions do %>
+active
+<% end %>
 
-<p>
-  <strong>Bp:</strong>
-  <%= @employee_examination_session.bp %>
-</p>
+<!-- information start -->
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6 col-12 ">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title mb-2">Summary</div>
+      </div>
+      <div class="card-body">
+        <div class="card-text">
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Employee Name</dt>
+            <dd class="col-sm-9"> <%= @employee_examination_session.employee.name %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Employee ID</dt>
+            <dd class="col-sm-9"> <%= @employee_examination_session.employee.national_id %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Age</dt>
+            <dd class="col-sm-9"> <%= @employee_examination_session.employee.age %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Workplace</dt>
+            <dd class="col-sm-9"> <%= @employee_examination_session.examination_session.workplace.name %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Examination Type</dt>
+            <dd class="col-sm-9"> <%= @employee_examination_session.examination_session.examination_type %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Date</dt>
+            <dd class="col-sm-9"> <%= @employee_examination_session.examination_session.date_of_exam %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3 text-right">Remarks</dt>
+            <dd class="col-sm-9"> <%= @employee_examination_session.remarks %></dd>
+          </dl>
+        </div>
 
-<p>
-  <strong>Btw:</strong>
-  <%= @employee_examination_session.btw %>
-</p>
-
-<p>
-  <strong>Fp:</strong>
-  <%= @employee_examination_session.fp %>
-</p>
-
-<p>
-  <strong>Lmp:</strong>
-  <%= @employee_examination_session.lmp %>
-</p>
-
-<p>
-  <strong>Remarks:</strong>
-  <%= @employee_examination_session.remarks %>
-</p>
-
-<p>
-  <strong>Employee:</strong>
-  <%= @employee_examination_session.employee_id %>
-</p>
-
-<p>
-  <strong>Session:</strong>
-  <%= @employee_examination_session.examination_session_id %>
-</p>
-
-<%= link_to 'Edit', edit_employee_examination_session_path(@employee_examination_session) %> |
-<%= link_to 'Back', employee_examination_sessions_path %>
+        <%= link_to 'Edit', edit_employee_examination_session_path(@employee_examination_session) %> |
+        <%= link_to 'Back', employee_examination_sessions_path %>
+      </div>
+    </div>
+  </div>
+</div>
