@@ -63,7 +63,7 @@ workplaces.each do |w|
                                     email: w["email"],
                                     location: w["location"],
                                     phone: w["phone"],
-                                    registration: ["registration"],
+                                    registration: w["registration"],
                                     practitioner_id: practitioner.id
                                     )
     w["employees"].each do |e|
