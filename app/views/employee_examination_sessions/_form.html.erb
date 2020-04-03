@@ -1,52 +1,85 @@
-<%= form_with(model: employee_examination_session, local: true) do |form| %>
-  <% if employee_examination_session.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(employee_examination_session.errors.count, "error") %> prohibited this employee_examination_session from being saved:</h2>
+<!-- // Basic Horizontal form layout section start -->
+<div class="row d-flex justify-content-center">
 
-      <ul>
-        <% employee_examination_session.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+  <div class="col-md-6 col-12">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-body">
+
+          <%= form_with(model: employee_examination_session, local: true) do |form| %>
+          <% if employee_examination_session.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(employee_examination_session.errors.count, "error") %> prohibited this
+              employee_examination_session from being saved:</h2>
+
+            <ul>
+              <% employee_examination_session.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+
+          <div class="form-body">
+            <div class="col-12">
+              <div class="form-group row">
+                <div class="col-md-4">
+                  <span> <%= form.label :employee %>
+                  </span>
+                </div>
+                <div class="col-md-8">
+                  <div class="position-relative">
+                    <%= form.collection_select(:employee_id, Employee.all, :id, :name, {}, {:class=>'custom-select'}) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group row">
+                <div class="col-md-4">
+                  <span> <%= form.label :examination_session %>
+                  </span>
+                </div>
+                <div class="col-md-8">
+                  <div class="position-relative has-icon-left">
+                    <%= form.text_field :examination_session_id, class: "form-control", placeholder: "Examination Session ID" %>
+                    <div class="form-control-position">
+                      <i class="feather icon-lock"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-group row">
+                <div class="col-md-4">
+                  <span> <%= form.label :remarks %>
+                  </span>
+                </div>
+                <div class="col-md-8">
+                  <div class="position-relative has-icon-left">
+                    <%= form.text_field :remarks, class: "form-control", placeholder: "Examination Type" %>
+                    <div class="form-control-position">
+                      <i class="feather icon-lock"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-8 offset-md-4">
+              <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
+              <button type="reset" class="btn btn-outline-warning mr-1 mb-1">Reset</button>
+            </div>
+          </div>
+        </div>
         <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :bp %>
-    <%= form.text_field :bp %>
   </div>
+</div>
+</div>
+<!-- // Basic Horizontal form layout section end -->
 
-  <div class="field">
-    <%= form.label :btw %>
-    <%= form.text_field :btw %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fp %>
-    <%= form.text_field :fp %>
-  </div>
-
-  <div class="field">
-    <%= form.label :lmp %>
-    <%= form.text_field :lmp %>
-  </div>
-
-  <div class="field">
-    <%= form.label :remarks %>
-    <%= form.text_field :remarks %>
-  </div>
-
-  <div class="field">
-    <%= form.label :employee_id %>
-    <%= form.text_field :employee_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :session_id %>
-    <%= form.text_field :session_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<!-- The rest of the optional field zitaekwa tu, including DOSH 14 content-->
