@@ -39,9 +39,6 @@ gem 'paper_trail_scrapbook'
 # Authentication/Authorization things 
 gem 'devise'
 
-# For swagger documentation
-gem 'rswag'
-
 # For pagination
 gem 'will_paginate', '~> 3.1.0'
 
@@ -82,6 +79,10 @@ group :development do
   gem 'rubocop'
 
   gem 'rails-erd'
+
+  # For swagger documentation
+  gem 'rswag'
+  
 end
 
 group :test do
