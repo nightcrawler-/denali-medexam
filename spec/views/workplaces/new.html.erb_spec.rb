@@ -4,7 +4,7 @@ RSpec.describe "workplaces/new", type: :view do
   before(:each) do
     assign(:workplace, Workplace.new(
       address: "MyString",
-      email: "MyString",
+      email: "me@me.com",
       location: "MyString",
       name: "MyString",
       phone: "MyString",

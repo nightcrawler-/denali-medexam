@@ -21,6 +21,12 @@ class ExaminationSessionsController < ApplicationController
   def edit
   end
 
+  def examine 
+    # get and save the session? mark user as part of session, create employee examination session record
+    puts @examination_session
+    redirect_to @examination_session, notice: 'Examination session was successfully created.'
+  end
+
   # POST /examination_sessions
   # POST /examination_sessions.json
   def create
