@@ -42,6 +42,11 @@ gem 'devise'
 # For swagger documentation
 gem 'rswag'
 
+# I know, shouldn't be here, the above forces kinda for deployments
+# rspec -- adding to avoid ci fails, TODO: What does it do? -- first: rails g rspec:install
+gem 'rspec-rails'
+gem 'rspec_junit_formatter'
+
 # For pagination
 gem 'will_paginate', '~> 3.1.0'
 
@@ -49,10 +54,6 @@ gem 'will_paginate', '~> 3.1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-
-  # rspec -- adding to avoid ci fails, TODO: What does it do? -- first: rails g rspec:install
-  gem 'rspec-rails'
-  gem 'rspec_junit_formatter'
 
   # annotate model files with db fields, run for first time: rails g annotate:install
   gem 'annotate'
