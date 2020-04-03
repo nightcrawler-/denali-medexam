@@ -15,6 +15,8 @@ class EmployeeExaminationSessionsController < ApplicationController
   # GET /employee_examination_sessions/new
   def new
     @employee_examination_session = EmployeeExaminationSession.new
+    # Allows to create employee examination session from existing examination session, might refie later
+    @employee_examination_session.examination_session_id = params[:examination_session_id]
   end
 
   # GET /employee_examination_sessions/1/edit

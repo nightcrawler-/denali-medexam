@@ -5,7 +5,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Showing employees of <%= examination_session.workplace.name %>. that were
+                <h4 class="card-title">Showing employees of <%= examination_session.workplace.name %> that were
                     examined on
                     <%= examination_session.date_of_exam %></h4>
             </div>
@@ -63,7 +63,7 @@
 
 
                     </div>
-                    <%= link_to '<button type="button" class="btn btn-outline-dark mr-1 mb-1">New Employee</button>'.html_safe, new_employee_path %>
+                    <%= link_to '<button type="button" class="btn btn-outline-dark mr-1 mb-1">New Employee Examination Session</button>'.html_safe, new_employee_examination_session_path(:examination_session_id => examination_session.id) %>
                 </div>
             </div>
         </div>
