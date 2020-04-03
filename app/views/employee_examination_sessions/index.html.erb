@@ -35,15 +35,15 @@ active
                   <td><%= employee_examination_session.employee.name %></td>
                   <td><%= employee_examination_session.employee.workplace.name %></td>
                   <td><%= employee_examination_session.examination_session.examination_type %></td>
-                  <td><%= employee_examination_session.examination_session.date %></td>
+                  <td><%= employee_examination_session.examination_session.date_of_exam %></td>
                   <td><%= employee_examination_session.remarks %></td>
                   <td><%= employee_examination_session.bp %></td>
                   <td><%= employee_examination_session.btw %></td>
 
-                  <td><%= link_to 'Show', @employee_examination_session %></td>
-                  <td><%= link_to 'Edit', edit_employee_examination_session_path(employee_examination_sessions) %></td>
+                  <td><%= link_to 'Show', employee_examination_session %></td>
+                  <td><%= link_to 'Edit', edit_employee_examination_session_path(employee_examination_session) %></td>
                   <td>
-                    <%= link_to 'Destroy', employee_examination_sessions, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%= link_to 'Destroy', employee_examination_session, method: :delete, data: { confirm: 'Are you sure?' } %>
                   </td>
                 </tr>
                 <% end %>
