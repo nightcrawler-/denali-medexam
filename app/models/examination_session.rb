@@ -24,4 +24,8 @@ class ExaminationSession < ApplicationRecord
     def employees
         self.employee_examination_sessions.map(&:employee)
     end
+
+    def all_employees
+        self.workplace.employees
+    end
 end

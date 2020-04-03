@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-8">
                   <div class="position-relative">
-                    <%= form.collection_select(:employee_id, Employee.all, :id, :name, {}, {:class=>'custom-select'}) %>
+                    <%= form.collection_select(:employee_id, @examination_session.all_employees, :id, :name, {}, {:class=>'custom-select'}) %>
                   </div>
                 </div>
               </div>
