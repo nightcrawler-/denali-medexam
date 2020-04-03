@@ -34,7 +34,7 @@ class EmployeeExaminationSessionsController < ApplicationController
 
     respond_to do |format|
       if @employee_examination_session.save # Redirect to examination session edit to add the next employee
-        format.html { redirect_to edit_examination_session_path(@employee_examination_session.examination_session), notice: 'Employee examination session was successfully created.' }
+        format.html { redirect_to new_employee_examination_session_path(:examination_session_id => @employee_examination_session.examination_session.id), notice: 'Employee examination session was successfully created.' }
         format.json { render :show, status: :created, location: @employee_examination_session }
       else
         format.html { render :new }

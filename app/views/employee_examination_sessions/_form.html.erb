@@ -4,7 +4,10 @@
     <div class="card">
       <div class="card-content">
         <div class="card-body">
-
+          <p>
+            Search for an employee from the drop down then click on "Submit" once found. The record will be
+            automatically commited.
+          </p>
           <%= form_with(model: employee_examination_session, local: true) do |form| %>
           <% if employee_examination_session.errors.any? %>
           <div id="error_explanation">
@@ -27,7 +30,7 @@
                   </span>
                 </div>
                 <div class="col-md-8">
-                  <%= form.collection_select(:employee_id, @examination_session.all_employees, :id, :name, {}, {:class=>'select2 form-control'}) %>
+                  <%= form.collection_select(:employee_id, @examination_session.unmarked_employees, :id, :name, {}, {:class=>'select2 form-control'}) %>
                 </div>
               </div>
             </div>
