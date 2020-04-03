@@ -55,6 +55,8 @@ group :development, :test do
   # To keep an audit trail, currently for exploration: bundle exec rails generate paper_trail:install [--with-changes]
   gem 'paper_trail'
 
+  gem 'paper_trail_scrapbook'
+
   # Authentication/Authorization things 
   gem 'devise'
 
