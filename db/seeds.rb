@@ -5,3 +5,77 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Seed file:
+# /home/frederick/Dev/data/legacy-medexam
+
+#
+#  id              :bigint           not null, primary key
+#  address         :string
+#  email           :string
+#  location        :string
+#  name            :string
+#  phone           :string
+#  registration    :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  practitioner_id :bigint
+#
+
+#  address      :string
+#  dob          :date
+#  gender       :integer
+#  name         :string
+#  pn           :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  national_id  :string
+#  workplace_id :bigint
+
+#  address      :string
+#  email        :string
+#  fax          :string
+#  location     :string
+#  name         :string
+#  phone        :string
+#  registration :string
+#  signature    :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+
+practitioner = Practitioner.create!(
+                                    address: "P.O. Box 3310-10200, Lisbit",
+                                    email: "juan@carlo.com",
+                                    fax: "10005",
+                                    location: "Nauru",
+                                    name: "Lizzy Caplan",
+                                    phone: "072300564",
+                                    registration: "W1590"
+)
+
+workplaces = JSON.parse(File.read('/home/frederick/Dev/data/legacy-medexam/workplace-employees.json'))
+
+workplaces.each do |w|
+
+    workplace = Workplace.create!(
+                                    name: w["name"],
+                                    address: w["address"],
+                                    email: w["email"],
+                                    location: w["location"],
+                                    phone: w["phone"],
+                                    registration: ["registration"],
+                                    practitioner_id: practitioner.id
+                                    )
+    w["employees"].each do |e|
+        employee = Employee.create!(
+                                    name: e["name"],
+                                    dob: e["dob"],
+                                    gender: e["gender"],
+                                    pn: e["pn"],
+                                    national_id: e["national_id"],
+                                    workplace_id: workplace.id
+
+        )
+        workplace.employees << employee
+    end
+end
