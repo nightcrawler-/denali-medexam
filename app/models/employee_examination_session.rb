@@ -7,7 +7,7 @@
 #  btw                    :float
 #  fp                     :string
 #  lmp                    :string
-#  remarks                :string
+#  remarks                :string           default("PHYSICALLY FIT")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  employee_id            :bigint
