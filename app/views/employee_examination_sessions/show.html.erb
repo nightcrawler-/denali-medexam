@@ -3,48 +3,152 @@
 active
 <% end %>
 
-<!-- information start -->
+
 <div class="row d-flex justify-content-center">
-  <div class="col-md-6 col-12 ">
+  <!-- Description lists horizontal -->
+  <div class="">
     <div class="card">
       <div class="card-header">
-        <div class="card-title mb-2">Summary</div>
+        <h4 class="card-title"><strong>DOSH 11</strong></h4>
       </div>
-      <div class="card-body">
-        <div class="card-text">
-          <dl class="row">
-            <dt class="col-sm-3 text-right">Employee Name</dt>
-            <dd class="col-sm-9"> <%= @employee_examination_session.employee.name %></dd>
-          </dl>
-          <dl class="row">
-            <dt class="col-sm-3 text-right">Employee ID</dt>
-            <dd class="col-sm-9"> <%= @employee_examination_session.employee.national_id %></dd>
-          </dl>
-          <dl class="row">
-            <dt class="col-sm-3 text-right">Age</dt>
-            <dd class="col-sm-9"> <%= @employee_examination_session.employee.age %></dd>
-          </dl>
-          <dl class="row">
-            <dt class="col-sm-3 text-right">Workplace</dt>
-            <dd class="col-sm-9"> <%= @employee_examination_session.examination_session.workplace.name %></dd>
-          </dl>
-          <dl class="row">
-            <dt class="col-sm-3 text-right">Examination Type</dt>
-            <dd class="col-sm-9"> <%= @employee_examination_session.examination_session.examination_type %></dd>
-          </dl>
-          <dl class="row">
-            <dt class="col-sm-3 text-right">Date</dt>
-            <dd class="col-sm-9"> <%= @employee_examination_session.examination_session.date_of_exam %></dd>
-          </dl>
-          <dl class="row">
-            <dt class="col-sm-3 text-right">Remarks</dt>
-            <dd class="col-sm-9"> <%= @employee_examination_session.remarks %></dd>
-          </dl>
-        </div>
+      <div class="card-header">
+        <h4 class="card-title">THE FACTORIES AND OTHER PLACES OF WORK ACT (MEDICAL EXAMINATIONS RULE), 2005</h4>
+      </div>
+      <br>
+      <br>
 
-        <%= link_to 'Edit', edit_employee_examination_session_path(@employee_examination_session) %> |
-        <%= link_to 'Back', employee_examination_sessions_path %>
+      <div class="row d-flex justify-content-center">
+        <div class="card-text">
+          <h4>FOURTH SCHEDULES RULES (8)</h4>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <div class="card-text">
+          <h4><strong>CERTIFICATE OF FITNESS</strong></h4>
+        </div>
+      </div>
+
+      <div class="card-header">
+        <p>This form should be filled by the designated health practittioner for all those entering employment or
+          returning from sick leave occasioned by an occupational disease as applicable.</p>
+      </div>
+
+      <div class="card-content">
+        <div class="card-body">
+          <div class="card-text">
+            <dl class="row">
+              <dt class="col-sm-4">1) Name of employee examined</dt>
+              <dd class="col-sm-8"><%= @employee_examination_session.employee.name.upcase %></dd>
+            </dl>
+            <dl class="row">
+              <dt class="col-sm-4">2) ID/Passport Number</dt>
+              <dd class="col-sm-8"><%= @employee_examination_session.employee.national_id%></dd>
+            </dl>
+            <dl class="row">
+              <dt class="col-sm-4">3) Employment Number</dt>
+              <dd class="col-sm-8 ml-auto"><%= @employee_examination_session.employee.pn %></dd>
+            </dl>
+            <div class="row">
+              <div class="col-sm-4">
+                <dl class="row">
+                  <dt class="col-sm-6">4) Date of birth</dt>
+                  <dd class="col-sm-6"> <%= @employee_examination_session.employee.age %> YRS</dd>
+                </dl>
+              </div>
+              <div class="col-sm-4">
+                <dl class="row">
+                  <dt class="col-sm-4">Sex</dt>
+                  <dd class="col-sm-8"> <%= @employee_examination_session.employee.gender.upcase %> </dd>
+                </dl>
+              </div>
+            </div>
+
+            <dl class="row">
+              <dt class="col-sm-4">5) Name and address of employer</dt>
+              <dd class="col-sm-8">
+                <%= @employee_examination_session.workplace_details.upcase
+                %> </dd>
+            </dl>
+
+            <dl class="row">
+              <dt class="col-sm-4">6) Examinations/Tests done</dt>
+              <dd class="col-sm-8"><%= @employee_examination_session.examination_type.upcase
+                %> </dd>
+            </dl>
+          </div>
+          <p>I hereby certify that I have examined the above mentioned employee on <strong><%= @employee_examination_session.date.day
+            %> </strong> this day of
+            <strong> <%= @employee_examination_session.date.strftime("%B") + ' , ' + @employee_examination_session.date.year.to_s
+              %> </strong>and that <strong> he is fit</strong></p>
+
+          <div class="card-text">
+            <dl class="row">
+              <dt class="col-sm-4">Remarks</dt>
+              <dd class="col-sm-8"> <%= @employee_examination_session.remarks %> </dd>
+            </dl>
+
+
+            <div class="row">
+              <div class="col-sm-4">
+                <dl class="row">
+                  <dt class="col-sm-4">Signature</dt>
+                  <dd class="col-sm-8"> .................................................... </dd>
+                </dl>
+              </div>
+              <div class="col-sm-4">
+                <dl class="row">
+                  <dt class="col-sm-4">Date</dt>
+                  <dd class="col-sm-8"> <%= @employee_examination_session.date %> </dd>
+                </dl>
+              </div>
+            </div>
+
+            <dl class="row">
+              <dt class="col-sm-4">Name and address of designated health practitioner</dt>
+              <dd class="col-sm-8"><%= @employee_examination_session.practitioner_details.upcase %></dd>
+            </dl>
+
+            <dl class="row">
+              <dt class="col-sm-4">Approved Reg. No.</dt>
+              <dd class="col-sm-8"><%= @employee_examination_session.practitioner_registration.upcase %></dd>
+            </dl>
+
+            <dl class="row">
+              <dt class="col-sm-4">Physical location of office</dt>
+              <dd class="col-sm-8"> <%= @employee_examination_session.practitioner_location.upcase %> </dd>
+            </dl>
+
+            <div class="row">
+              <div class="col-sm-4">
+                <dl class="row">
+                  <dt class="col-sm-4">Tel</dt>
+                  <dd class="col-sm-8"> <%= @employee_examination_session.practitioner_phone %> </dd>
+                </dl>
+              </div>
+              <div class="col-sm-4">
+                <dl class="row">
+                  <dt class="col-sm-2">Fax</dt>
+                  <dd class="col-sm-4"> <%= @employee_examination_session.practitioner_fax %> </dd>
+                </dl>
+              </div>
+            </div>
+            <dl class="row">
+              <dt class="col-sm-4">Email</dt>
+              <dd class="col-sm-8"><%= @employee_examination_session.practitioner_email %></dd>
+            </dl>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+
 </div>
+
+<!-- The below for edit and more, later, for now hise so as no appear on print 
+<div class="">
+  <%= link_to 'Edit', edit_employee_examination_session_path(@employee_examination_session) %> |
+  <%= link_to 'Back', employee_examination_sessions_path %>
+</div>
+-->
