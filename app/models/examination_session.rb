@@ -13,7 +13,7 @@
 class ExaminationSession < ApplicationRecord
     ################ Validations #####################
 
-    validates_presence_of :examination_type, :date_of_exam
+    validates_presence_of :examination_type, :date_of_exam, :health_risk
 
     ############### Associations #########################
 
