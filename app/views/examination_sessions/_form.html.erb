@@ -9,7 +9,8 @@
           <%= form_with(model: examination_session, local: true, class: "form form-horizontal") do |form| %>
           <% if examination_session.errors.any? %>
           <div id="error_explanation">
-            <h2><%= pluralize(examination_session.errors.count, "error") %> prohibited this examination_session from being saved:</h2>
+            <h2><%= pluralize(examination_session.errors.count, "error") %> prohibited this examination_session from
+              being saved:</h2>
 
             <ul>
               <% examination_session.errors.full_messages.each do |message| %>
@@ -23,7 +24,7 @@
               <div class="col-12">
                 <div class="form-group row">
                   <div class="col-md-4">
-                    <span> <%= form.label :date_of_exam %> </span>
+                    <span>Date of examinations</span>
                   </div>
                   <div class="col-md-8">
                     <div class="position-relative has-icon-left">
@@ -35,7 +36,7 @@
               <div class="col-12">
                 <div class="form-group row">
                   <div class="col-md-4">
-                    <span> <%= form.label :examination_type %>
+                    <span> Examinations done
                     </span>
                   </div>
                   <div class="col-md-8">
@@ -48,11 +49,26 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-12">
                 <div class="form-group row">
                   <div class="col-md-4">
-                    <span> <%= form.label :workplace %>
+                    <span>Type of risk to health
+                    </span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="position-relative has-icon-left">
+                      <%= form.text_field :health_risk, class: "form-control", placeholder: "Type of risk to health" %>
+                      <div class="form-control-position">
+                        <i class="feather icon-lock"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <span> Workplace
                     </span>
                   </div>
                   <div class="col-md-8">
