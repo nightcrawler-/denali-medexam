@@ -2,13 +2,16 @@
 #
 # Table name: examination_sessions
 #
-#  id               :bigint           not null, primary key
-#  date_of_exam     :date
-#  examination_type :string
-#  health_risk      :string
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  workplace_id     :bigint
+#  id                                    :bigint           not null, primary key
+#  abnormal_results                      :integer
+#  abnormal_results_occupational_disease :integer
+#  date_of_exam                          :date
+#  examination_type                      :string
+#  health_risk                           :string
+#  recommended_for_re_deployment         :integer
+#  created_at                            :datetime         not null
+#  updated_at                            :datetime         not null
+#  workplace_id                          :bigint
 #
 require 'rails_helper'
 
