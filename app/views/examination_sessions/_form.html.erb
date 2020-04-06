@@ -42,6 +42,10 @@
                   <div class="col-md-8">
                     <div class="position-relative has-icon-left">
                       <%= form.text_field :examination_type, class: "form-control", placeholder: "Examination Type" %>
+                      <datalist id="examination_types">
+                        <% ExaminationSession.all.each do |exam_type| %>
+                        <option value=<%=exam_type
+                      </datalist>
                       <div class="form-control-position">
                         <i class="feather icon-lock"></i>
                       </div>
