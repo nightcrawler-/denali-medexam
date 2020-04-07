@@ -38,4 +38,8 @@ class ExaminationSession < ApplicationRecord
     def unmarked_employees
         self.workplace.employees.where.not(id: self.employees.map(&:id))
     end
+
+    def abnormal_results_non_occupational_disease
+        self.abnormal_results.to_i - self.abnormal_results_occupational_disease.to_i
+    end
 end

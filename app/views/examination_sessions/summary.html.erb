@@ -48,44 +48,44 @@
                     <div class="card-text">
                         <dl class="row">
                             <dt class="col-sm-4">Name of workplace</dt>
-                            <dd class="col-sm-8">AQUILA DEVELOPMENT COMPANY LIMITED</dd>
+                            <dd class="col-sm-8"><%=  @examination_session.workplace.name %></dd>
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-4">Workplace registration number</dt>
-                            <dd class="col-sm-8">NKU 188585
+                            <dd class="col-sm-8"><%=  @examination_session.workplace.registration %>
                             </dd>
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-4">Location</dt>
-                            <dd class="col-sm-8 ml-auto">Nakuru</dd>
+                            <dd class="col-sm-8 ml-auto"><%=  @examination_session.workplace.location %></dd>
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-4">Tel</dt>
-                            <dd class="col-sm-8 ml-auto">0722-9989393</dd>
+                            <dd class="col-sm-8 ml-auto"><%=  @examination_session.workplace.phone %></dd>
                         </dl>
                         <div class="row">
                             <div class="col-sm-4">
                                 <dl class="row">
                                     <dt class="col-sm-4">Address</dt>
-                                    <dd class="col-sm-8">P.O. Box 3444, Naivasha </dd>
+                                    <dd class="col-sm-8"><%=  @examination_session.workplace.address %> </dd>
                                 </dl>
                             </div>
                             <div class="col-sm-4">
                                 <dl class="row">
                                     <dt class="col-sm-4">Email</dt>
-                                    <dd class="col-sm-8"> me@you.com </dd>
+                                    <dd class="col-sm-8"> <%=  @examination_session.workplace.email %> </dd>
                                 </dl>
                             </div>
                         </div>
 
                         <dl class="row">
                             <dt class="col-sm-4">Type of risk to health</dt>
-                            <dd class="col-sm-8">ERGONOMICS</dd>
+                            <dd class="col-sm-8"><%=  @examination_session.health_risk %></dd>
                         </dl>
 
                         <dl class="row">
                             <dt class="col-sm-4">Number of workers exposed</dt>
-                            <dd class="col-sm-8">400</dd>
+                            <dd class="col-sm-8"><%=  @examination_session.employees.count %></dd>
                         </dl>
 
                     </div>
@@ -93,20 +93,22 @@
                     <div class="card-text">
                         <dl class="row">
                             <dt class="col-sm-4">Number fo employees examined</dt>
-                            <dd class="col-sm-8"> 244 </dd>
+                            <dd class="col-sm-8"> <%=  @examination_session.employees.count %> </dd>
                         </dl>
 
                         <dl class="row">
                             <dt class="col-sm-4">Number with abnormal results</dt>
-                            <dd class="col-sm-8"> 11 </dd>
+                            <dd class="col-sm-8"> <%=  @examination_session.abnormal_results.to_i %> </dd>
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-4">(a) Occupational disease</dt>
-                            <dd class="col-sm-8">0 </dd>
+                            <dd class="col-sm-8">
+                                <%=  @examination_session.abnormal_results_occupational_disease.to_i %> </dd>
                         </dl>
                         <dl class="row">
-                            <dt class="col-sm-4">(b) Non-occupational didease</dt>
-                            <dd class="col-sm-8">11 </dd>
+                            <dt class="col-sm-4">(b) Non-occupational disease</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.abnormal_results_non_occupational_disease %>
+                            </dd>
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-5">Number of workers recommended for re-deployment</dt>
