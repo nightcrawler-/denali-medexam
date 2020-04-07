@@ -1,0 +1,185 @@
+<div class="row d-flex justify-content-center">
+    <!-- Description lists horizontal -->
+    <div class="">
+        <div class="card">
+
+            <div class="row d-flex justify-content-center">
+                <div class="card-header">
+                    <img src="/app-assets/images/logo/coa.jpg"> </div>
+            </div>
+            <div class="card-header">
+                <h4 class="card-title"><strong>DOSH 11</strong></h4>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="card-header">
+                    <h4 class="card-title">MINISTRY OF LABOUR AND SOCIAL PROTECTION STATE DEPARTMENT FOR LABOUR</h4>
+                </div>
+
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="card-header">
+                    <h4 class="card-title">DIRECTORATE OF OCCUPATIONAL HEALTH AND SAFETY SERVICES</h4>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="card-header">
+                    <h6 class="card-title"> <small>O.S.H.A., 2007 (MEDICAL EXAMINATION RULES) 2005</small></h6>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row d-flex justify-content-center">
+                <div class="card-text">
+                    <h4>SECOND SCHEDULES 6 (2)</h4>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="card-text">
+                    <h4><strong>SUMMARY REPORT FORM</strong></h4>
+                </div>
+            </div>
+
+            <div class="card-header">
+                <p>This form should be completed by the designated health practitioner and sumitted to the director
+                    within twenty one days and a copy sent to the employer</p>
+            </div>
+
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="card-text">
+                        <dl class="row">
+                            <dt class="col-sm-4">Name of workplace</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.workplace.name %></dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Workplace registration number</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.workplace.registration %>
+                            </dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Location</dt>
+                            <dd class="col-sm-8 ml-auto"><%=  @examination_session.workplace.location %></dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Tel</dt>
+                            <dd class="col-sm-8 ml-auto"><%=  @examination_session.workplace.phone %></dd>
+                        </dl>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <dl class="row">
+                                    <dt class="col-sm-4">Address</dt>
+                                    <dd class="col-sm-8"><%=  @examination_session.workplace.address %> </dd>
+                                </dl>
+                            </div>
+                            <div class="col-sm-4">
+                                <dl class="row">
+                                    <dt class="col-sm-4">Email</dt>
+                                    <dd class="col-sm-8"> <%=  @examination_session.workplace.email %> </dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <dl class="row">
+                            <dt class="col-sm-4">Type of risk to health</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.health_risk %></dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-sm-4">Number of workers exposed</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.employees.count %></dd>
+                        </dl>
+
+                    </div>
+                    <p>RESULTS OF EXAMINATIONS</p>
+                    <div class="card-text">
+                        <dl class="row">
+                            <dt class="col-sm-4">Number fo employees examined</dt>
+                            <dd class="col-sm-8"> <%=  @examination_session.employees.count %> </dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-sm-4">Number with abnormal results</dt>
+                            <dd class="col-sm-8"> <%=  @examination_session.abnormal_results.to_i %> </dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">(a) Occupational disease</dt>
+                            <dd class="col-sm-8">
+                                <%=  @examination_session.abnormal_results_occupational_disease.to_i %> </dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">(b) Non-occupational disease</dt>
+                            <dd class="col-sm-8">
+                                <%=  @examination_session.abnormal_results_non_occupational_disease %>
+                            </dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-5">Number of workers recommended for re-deployment</dt>
+                            <dd class="col-sm-1"><%=  @examination_session.recommended_for_re_deployment %></dd>
+                        </dl>
+
+                        <p>I certify that the information given above is correct. Particulars of all workers with
+                            abnormal results including those recommended for re-deployment are attached</p>
+
+                        <dl class="row">
+                            <dt class="col-sm-4">Name of designated health practitioner</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_name %></dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Approved regitration number</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_registration %> </dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Address</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_address %> </dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Physical address of office</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_location %></dd>
+                        </dl>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <dl class="row">
+                                    <dt class="col-sm-4">Tel</dt>
+                                    <dd class="col-sm-8"> <%=  @examination_session.practitioner_phone %> </dd>
+                                </dl>
+                            </div>
+                            <div class="col-sm-4">
+                                <dl class="row">
+                                    <dt class="col-sm-4">Fax</dt>
+                                    <dd class="col-sm-8"> <%=  @examination_session.practitioner_fax %> </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <dl class="row">
+                            <dt class="col-sm-4">Email</dt>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_email %> </dd>
+                        </dl>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <dl class="row">
+                                    <dt class="col-sm-4">Signature</dt>
+                                    <dd class="col-sm-8"> .................................................... </dd>
+                                </dl>
+                            </div>
+                            <div class="col-sm-4">
+                                <dl class="row">
+                                    <dt class="col-sm-4">Date</dt>
+                                    <dd class="col-sm-8"> <%=  @examination_session.date_of_exam %> </dd>
+                                </dl>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

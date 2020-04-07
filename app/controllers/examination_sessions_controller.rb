@@ -1,5 +1,5 @@
 class ExaminationSessionsController < ApplicationController
-  before_action :set_examination_session, only: [:show, :edit, :update, :destroy]
+  before_action :set_examination_session, only: [:show, :edit, :update, :destroy, :summary]
 
   # GET /examination_sessions
   # GET /examination_sessions.json
@@ -15,6 +15,9 @@ class ExaminationSessionsController < ApplicationController
   # GET /examination_sessions/new
   def new
     @examination_session = ExaminationSession.new
+  end
+
+  def summary
   end
 
   # GET /examination_sessions/1/edit

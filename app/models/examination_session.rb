@@ -2,13 +2,16 @@
 #
 # Table name: examination_sessions
 #
-#  id               :bigint           not null, primary key
-#  date_of_exam     :date
-#  examination_type :string
-#  health_risk      :string
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  workplace_id     :bigint
+#  id                                    :bigint           not null, primary key
+#  abnormal_results                      :integer
+#  abnormal_results_occupational_disease :integer
+#  date_of_exam                          :date
+#  examination_type                      :string
+#  health_risk                           :string
+#  recommended_for_re_deployment         :integer
+#  created_at                            :datetime         not null
+#  updated_at                            :datetime         not null
+#  workplace_id                          :bigint
 #
 class ExaminationSession < ApplicationRecord
     ################ Validations #####################
@@ -34,5 +37,37 @@ class ExaminationSession < ApplicationRecord
     # TODO Test this functionality. This func is supposed to return the users who are not in this session
     def unmarked_employees
         self.workplace.employees.where.not(id: self.employees.map(&:id))
+    end
+
+    def abnormal_results_non_occupational_disease
+        self.abnormal_results.to_i - self.abnormal_results_occupational_disease.to_i
+    end
+
+    def practitioner_name
+        self.workplace.practitioner.name
+    end
+
+    def practitioner_address
+        self.workplace.practitioner.address
+    end
+
+    def practitioner_registration
+        self.workplace.practitioner.registration
+    end
+
+    def practitioner_location
+        self.workplace.practitioner.location
+    end
+
+    def practitioner_phone
+        self.workplace.practitioner.phone
+    end
+
+    def practitioner_email
+        self.workplace.practitioner.email
+    end
+
+    def practitioner_fax
+        self.workplace.practitioner.fax
     end
 end
