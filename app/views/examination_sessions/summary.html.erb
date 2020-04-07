@@ -112,7 +112,7 @@
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-5">Number of workers recommended for re-deployment</dt>
-                            <dd class="col-sm-1">0 </dd>
+                            <dd class="col-sm-1"><%=  @examination_session.recommended_for_re_deployment %></dd>
                         </dl>
 
                         <p>I certify that the information given above is correct. Particulars of all workers with
@@ -120,38 +120,38 @@
 
                         <dl class="row">
                             <dt class="col-sm-4">Name of designated health practitioner</dt>
-                            <dd class="col-sm-8">DR>. FRED OMALA</dd>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_name %></dd>
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-4">Approved regitration number</dt>
-                            <dd class="col-sm-8">A23344 </dd>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_registration %> </dd>
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-4">Address</dt>
-                            <dd class="col-sm-8">P.O. BOX 31, NAKURU </dd>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_address %> </dd>
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-4">Physical address of office</dt>
-                            <dd class="col-sm-8">REGIONAL DOSHS HQS NAKURU </dd>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_location %></dd>
                         </dl>
 
                         <div class="row">
                             <div class="col-sm-4">
                                 <dl class="row">
                                     <dt class="col-sm-4">Tel</dt>
-                                    <dd class="col-sm-8"> 072133435535 </dd>
+                                    <dd class="col-sm-8"> <%=  @examination_session.practitioner_phone %> </dd>
                                 </dl>
                             </div>
                             <div class="col-sm-4">
                                 <dl class="row">
                                     <dt class="col-sm-4">Fax</dt>
-                                    <dd class="col-sm-8"> 35233523523523 </dd>
+                                    <dd class="col-sm-8"> <%=  @examination_session.practitioner_fax %> </dd>
                                 </dl>
                             </div>
                         </div>
                         <dl class="row">
                             <dt class="col-sm-4">Email</dt>
-                            <dd class="col-sm-8">dromala@yahoo.com </dd>
+                            <dd class="col-sm-8"><%=  @examination_session.practitioner_email %> </dd>
                         </dl>
 
                         <div class="row">
@@ -164,7 +164,7 @@
                             <div class="col-sm-4">
                                 <dl class="row">
                                     <dt class="col-sm-4">Date</dt>
-                                    <dd class="col-sm-8"> 12-Dec-2019 </dd>
+                                    <dd class="col-sm-8"> <%=  @examination_session.date_of_exam %> </dd>
                                 </dl>
                             </div>
                         </div>
