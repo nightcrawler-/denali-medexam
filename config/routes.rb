@@ -8,12 +8,13 @@ Rails.application.routes.draw do
 
   resources :employee_examination_sessions
   resources :employees
-  resources :examination_sessions
+  resources :examination_sessions do
+    member do
+      get 'summary'
+    end
+  end
   resources :workplaces
   resources :practitioners
-
-  get 'examination_sessions_summary/:id' => 'examination_sessions#summary'
-
 
   devise_for :users
 
