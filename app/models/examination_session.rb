@@ -42,4 +42,32 @@ class ExaminationSession < ApplicationRecord
     def abnormal_results_non_occupational_disease
         self.abnormal_results.to_i - self.abnormal_results_occupational_disease.to_i
     end
+
+    def practitioner_name
+        self.workplace.practitioner.name
+    end
+
+    def practitioner_address
+        self.workplace.practitioner.address
+    end
+
+    def practitioner_registration
+        self.workplace.practitioner.registration
+    end
+
+    def practitioner_location
+        self.workplace.practitioner.location
+    end
+
+    def practitioner_phone
+        self.workplace.practitioner.phone
+    end
+
+    def practitioner_email
+        self.workplace.practitioner.email
+    end
+
+    def practitioner_fax
+        self.workplace.practitioner.fax
+    end
 end
