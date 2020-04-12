@@ -45,8 +45,8 @@ RSpec.describe "employee_examination_sessions/new", type: :view do
       fp: "Fp",
       lmp: "Lmp",
       remarks: "Remarks",
-      employee: @employee,
-      examination_session: @examination_session
+      employee_id: @employee.id,
+      examination_session_id: @examination_session.id
     ))
   end
 
@@ -55,19 +55,10 @@ RSpec.describe "employee_examination_sessions/new", type: :view do
 
     assert_select "form[action=?][method=?]", employee_examination_sessions_path, "post" do
 
-      assert_select "input[name=?]", "employee_examination_session[bp]"
-
-      assert_select "input[name=?]", "employee_examination_session[btw]"
-
-      assert_select "input[name=?]", "employee_examination_session[fp]"
-
-      assert_select "input[name=?]", "employee_examination_session[lmp]"
-
       assert_select "input[name=?]", "employee_examination_session[remarks]"
 
-      assert_select "input[name=?]", "employee_examination_session[employee_id]"
+      assert_select "select[name=?]", "employee_examination_session[employee_id]"
 
-      assert_select "input[name=?]", "employee_examination_session[session_id]"
     end
   end
 end

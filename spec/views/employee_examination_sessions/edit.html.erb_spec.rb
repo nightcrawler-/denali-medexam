@@ -54,6 +54,8 @@ RSpec.describe "employee_examination_sessions/edit", type: :view do
 
     assert_select "form[action=?][method=?]", employee_examination_session_path(@employee_examination_session), "post" do
 
+     # The below commented out as they don't yet exist in the views as requirements 
+
      # assert_select "input[name=?]", "employee_examination_session[bp]"
 
      # assert_select "input[name=?]", "employee_examination_session[btw]"
