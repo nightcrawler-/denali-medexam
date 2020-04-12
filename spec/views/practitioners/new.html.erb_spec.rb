@@ -32,8 +32,6 @@ RSpec.describe "practitioners/new", type: :view do
       assert_select "input[name=?]", "practitioner[fax]"
 
       assert_select "input[name=?]", "practitioner[location]"
-
-      assert_select "input[name=?]", "practitioner[signature]"
     end
   end
 end
