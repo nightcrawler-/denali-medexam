@@ -20,13 +20,19 @@ RSpec.describe ExaminationSession, type: :model do
   subject { described_class.new(
                                 examination_type: "Physical",
                                 date_of_exam: Date.yesterday,
-                                workplace: Workplace.new
+                                workplace: Workplace.new,
+                                health_risk: "Beer"
     )
   }
 
   describe "Validations" do
     it "is valid with valid attributes" do
       expect(subject).to be_valid
+    end
+
+    it "is not valid without a health_risk" do
+      subject.health_risk = nil
+      expect(subject).to_not be_valid
     end
 
     it "is not valid without examination_type" do
