@@ -30,7 +30,7 @@ RSpec.describe "workplaces/new", type: :view do
 
       assert_select "input[name=?]", "workplace[registration]"
 
-      assert_select "input[name=?]", "workplace[practitioner_id]"
+      assert_select "select[name=?]", "workplace[practitioner_id]"
     end
   end
 end
