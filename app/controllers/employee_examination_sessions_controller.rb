@@ -1,5 +1,6 @@
 class EmployeeExaminationSessionsController < ApplicationController
   before_action :set_employee_examination_session, only: [:show, :edit, :update, :destroy]
+  before_action :set_examination_session, only: [:new, :edit]
 
   # GET /employee_examination_sessions
   # GET /employee_examination_sessions.json
@@ -18,9 +19,6 @@ class EmployeeExaminationSessionsController < ApplicationController
 
     # Allows to create employee examination session from existing examination session, might refie later
     @employee_examination_session.examination_session_id = params[:examination_session_id]
-
-    # We'll need to get the current exam session as well, in order to get employees for workplace in session
-    @examination_session = ExaminationSession.find(params[:examination_session_id])
   end
 
   # GET /employee_examination_sessions/1/edit
@@ -68,6 +66,11 @@ class EmployeeExaminationSessionsController < ApplicationController
   end
 
   private
+    # Set current examination session when adding employees from a dropdown
+    def set_examination_session
+      @examination_session = ExaminationSession.find(params[:examination_session_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_employee_examination_session
       @employee_examination_session = EmployeeExaminationSession.find(params[:id])

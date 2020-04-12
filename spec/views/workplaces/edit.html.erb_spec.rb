@@ -2,6 +2,16 @@ require 'rails_helper'
 
 RSpec.describe "workplaces/edit", type: :view do
   before(:each) do
+
+    @practitioner = Practitioner.create!(
+      name: "Jeane Aiko",
+      address:"123 Kansas",
+      email: "one@one",
+      location: "12 Kingstons",
+      registration: "4554 KE",
+      phone: "07230065561"
+    )
+
     @workplace = assign(:workplace, Workplace.create!(
       address: "MyString",
       email: "me@gmail.com",
@@ -9,7 +19,7 @@ RSpec.describe "workplaces/edit", type: :view do
       name: "MyString",
       phone: "MyString",
       registration: "MyString",
-      practitioner: Practitioner.create 
+      practitioner_id: @practitioner.id
     ))
   end
 
@@ -30,7 +40,7 @@ RSpec.describe "workplaces/edit", type: :view do
 
       assert_select "input[name=?]", "workplace[registration]"
 
-      assert_select "input[name=?]", "workplace[practitioner_id]"
+      assert_select "select[name=?]", "workplace[practitioner_id]"
     end
   end
 end

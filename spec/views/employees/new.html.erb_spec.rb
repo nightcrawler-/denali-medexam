@@ -19,7 +19,7 @@ RSpec.describe "employees/new", type: :view do
 
       assert_select "input[name=?]", "employee[address]"
 
-      assert_select "input[name=?]", "employee[gender]"
+      assert_select "select[name=?]", "employee[gender]"
 
       assert_select "input[name=?]", "employee[name]"
 
@@ -27,7 +27,7 @@ RSpec.describe "employees/new", type: :view do
 
       assert_select "input[name=?]", "employee[national_id]"
 
-      assert_select "input[name=?]", "employee[workplace_id]"
+      assert_select "select[name=?]", "employee[workplace_id]"
     end
   end
 end
