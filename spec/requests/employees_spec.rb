@@ -15,6 +15,9 @@
 RSpec.describe "/employees", type: :request do
   # Employee. As you add validations to Employee, be sure to
   # adjust the attributes here as well.
+  let(:user) { User.create!(email: "me@you.com", password: "password123") }
+  before(:each) { sign_in user }
+
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
   }
