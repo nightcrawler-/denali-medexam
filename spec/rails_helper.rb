@@ -47,10 +47,9 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   # Devise helpers for auth things
-  #config.include Devise::Test::ControllerHelpers, :type => :controller
-  #config.include Devise::Test::ControllerHelpers, :type => :request
   config.include Warden::Test::Helpers, type: :controller
   config.include Warden::Test::Helpers, type: :request
+  config.include Warden::Test::Helpers, type: :view
   config.include Devise::Test::IntegrationHelpers, type: :controller
   config.include Devise::Test::IntegrationHelpers, type: :request
 
