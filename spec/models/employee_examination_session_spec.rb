@@ -18,7 +18,7 @@ require 'rails_helper'
 RSpec.describe EmployeeExaminationSession, type: :model do
 
   let(:employee) {
-                  Employee.create(
+                  Employee.create!(
                     gender: "male",
                     name: "James",
                     national_id: "189943734",
@@ -28,14 +28,17 @@ RSpec.describe EmployeeExaminationSession, type: :model do
                }
 
   let(:examination_session) { 
-                  ExaminationSession.create(
+                  ExaminationSession.create!(
                     workplace: Workplace.new,
                     examination_type: "GE",
-                    date_of_exam: Date.yesterday
+                    date_of_exam: Date.yesterday,
+                    health_risk: "me"
                   )
    }
 
-  subject {described_class.new(remarks: "Good girl", employee: employee, examination_session: examination_session)}
+  let(:duplicate) {described_class.create(remarks: "Good girl", employee: employee, examination_session: examination_session)}
+
+  subject {described_class.create(remarks: "Good girl", employee: employee, examination_session: examination_session)}
 
   describe "Validations" do
 
@@ -48,9 +51,9 @@ RSpec.describe EmployeeExaminationSession, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it "should not have duplicate employee/examination session combinations" do
+    it "should not have existing employee/examination session combinations" do
       subject.save!
-      expect(subject).to_not be_valid
+      expect(duplicate).to_not be_valid
     end
 
   end

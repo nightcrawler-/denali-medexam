@@ -44,8 +44,12 @@ active
                   <td><%= practitioner.signature %></td>
                   <td><%= link_to 'Show', practitioner %></td>
                   <td><%= link_to 'Edit', edit_practitioner_path(practitioner) %></td>
+
+                  <% if current_user.has_role?(:admin) %>
                   <td><%= link_to 'Destroy', practitioner, method: :delete, data: { confirm: 'Are you sure?' } %>
                   </td>
+                  <% end %>
+                  
                 </tr>
                 <% end %>
               </tbody>

@@ -15,7 +15,7 @@ RSpec.describe "examination_sessions/new", type: :view do
 
       assert_select "input[name=?]", "examination_session[examination_type]"
 
-      assert_select "input[name=?]", "examination_session[workplace_id]"
+      assert_select "select[name=?]", "examination_session[workplace_id]"
     end
   end
 end

@@ -105,3 +105,26 @@ rails server
 ### Misc
 
 In the event you need to drop and recreate the db but access is disabled due to other users, force restart postgres `sudo systemctl restart postgresql`
+
+### Deployment to heroku
+
+For some strange reason, one of the dev/test groups gems, rspec, plus swagger etc had issues living out of thier groups so they had to be moved to production, no biggie but not advised.
+
+Now, setting up things on heroku should be quite straight forward -- get account, link to github and project etc.
+
+You'll need to set up the heroku CLI on your development machine, the guide is pretty clear on the steps. If you choose to deploy your app automatically for certain branches, easy. But for the first deployment, you need to perfom your db:migrate and db:seed tasks from the heroku CLI: `heroku run db:migrate -a your-app`
+
+How to reset PG Database on Heroku?
+Step 1: heroku restart
+Step 2: heroku pg:reset DATABASE (no need to change the DATABASE)
+Step 3: heroku run rake db:migrate
+Step 4: heroku run rake db:seed (if you have seed)
+One liner
+
+heroku restart -a denali-medexam; heroku pg:reset DATABASE --confirm denali-medexam denali-medexam; heroku run rake db:migrate -a denali-medexam
+
+###
+
+After deployment, user sign up is currently open, however, to gain full control, use the rails console to assign your user the admin role. `User.find(:id, email whatever) then x.add_role :admin`
+
+### 

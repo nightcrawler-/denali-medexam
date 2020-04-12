@@ -35,6 +35,12 @@ RSpec.describe Workplace, type: :model do
       expect(subject).to be_valid
     end
 
+    it "is not valid without a name" do
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end
+
+=begin
     it "is not valid without an address" do
       subject.address = nil
       expect(subject).to_not be_valid
@@ -55,11 +61,6 @@ RSpec.describe Workplace, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it "is not valid without a name" do
-      subject.name = nil
-      expect(subject).to_not be_valid
-    end
-
     it "is not valid without a phone" do 
       subject.phone = nil
       expect(subject).to_not be_valid
@@ -69,6 +70,8 @@ RSpec.describe Workplace, type: :model do
       subject.registration = nil
       expect(subject).to_not be_valid
     end
+=end  
+
   end
 
   describe "Associations" do

@@ -23,6 +23,5 @@ RSpec.describe "practitioners/show", type: :view do
     expect(rendered).to match(/Address/)
     expect(rendered).to match(/Fax/)
     expect(rendered).to match(/Location/)
-    expect(rendered).to match(/Signature/)
   end
 end

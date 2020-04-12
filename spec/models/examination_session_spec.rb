@@ -2,12 +2,16 @@
 #
 # Table name: examination_sessions
 #
-#  id               :bigint           not null, primary key
-#  date_of_exam     :date
-#  examination_type :string
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  workplace_id     :bigint
+#  id                                    :bigint           not null, primary key
+#  abnormal_results                      :integer
+#  abnormal_results_occupational_disease :integer
+#  date_of_exam                          :date
+#  examination_type                      :string
+#  health_risk                           :string
+#  recommended_for_re_deployment         :integer
+#  created_at                            :datetime         not null
+#  updated_at                            :datetime         not null
+#  workplace_id                          :bigint
 #
 require 'rails_helper'
 
@@ -16,13 +20,19 @@ RSpec.describe ExaminationSession, type: :model do
   subject { described_class.new(
                                 examination_type: "Physical",
                                 date_of_exam: Date.yesterday,
-                                workplace: Workplace.new
+                                workplace: Workplace.new,
+                                health_risk: "Beer"
     )
   }
 
   describe "Validations" do
     it "is valid with valid attributes" do
       expect(subject).to be_valid
+    end
+
+    it "is not valid without a health_risk" do
+      subject.health_risk = nil
+      expect(subject).to_not be_valid
     end
 
     it "is not valid without examination_type" do

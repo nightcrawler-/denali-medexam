@@ -15,7 +15,50 @@
 RSpec.describe "/employee_examination_sessions", type: :request do
   # EmployeeExaminationSession. As you add validations to EmployeeExaminationSession, be sure to
   # adjust the attributes here as well.
+  let(:user) { User.create!(email: "me@you.com", password: "password123") }
 
+  before(:each) do
+
+    sign_in user 
+
+    @practitioner = Practitioner.create!(
+      name: "Jeane Aiko",
+      address:"123 Kansas",
+      email: "one@one",
+      location: "12 Kingstons",
+      registration: "4554 KE",
+      phone: "07230065561"
+    )
+
+    @workplace =  Workplace.create!(
+      address: "MyString",
+      email: "me@gmail.com",
+      location: "MyString",
+      name: "MyString",
+      phone: "MyString",
+      registration: "MyString",
+      practitioner_id: @practitioner.id
+    )
+
+    @employee = Employee.create!(
+      address: "MyString",
+      gender: 0,
+      name: "Veronica Mars",
+      pn: "MyString",
+      national_id: "MyString",
+      workplace: @workplace,
+      dob: Date.yesterday
+    )
+
+    @examination_session = ExaminationSession.create!(
+      examination_type: "MyString",
+      workplace: @workplace,
+      date_of_exam: Date.yesterday,
+      health_risk: "idiet",
+      id:1
+    )
+  end
+  
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
   }
@@ -42,7 +85,7 @@ RSpec.describe "/employee_examination_sessions", type: :request do
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_employee_examination_session_url
+      get new_employee_examination_session_url(examination_session_id: "1")
       expect(response).to be_successful
     end
   end
