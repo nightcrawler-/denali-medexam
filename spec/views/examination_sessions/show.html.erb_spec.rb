@@ -6,7 +6,7 @@ RSpec.describe "examination_sessions/show", type: :view do
       examination_type: "Examination Type",
       workplace: Workplace.new,
       date_of_exam: Date.yesterday,
-      health_rik: "meh"
+      health_risk: "meh"
     ))
   end
 

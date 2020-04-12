@@ -43,7 +43,7 @@ active
             </dl>
             <dl class="row">
               <dt class="col-sm-4">2) ID/Passport Number</dt>
-              <dd class="col-sm-8"><%= @employee_examination_session.employee.national_id%></dd>
+              <dd class="col-sm-8"><%= @employee_examination_session.employee.national_id %></dd>
             </dl>
             <dl class="row">
               <dt class="col-sm-4">3) Employment Number</dt>
@@ -80,7 +80,7 @@ active
           <p>I hereby certify that I have examined the above mentioned employee on <strong><%= @employee_examination_session.date.day
             %> </strong> this day of
             <strong> <%= @employee_examination_session.date.strftime("%B") + ' , ' + @employee_examination_session.date.year.to_s
-              %> </strong>and that <strong> he is fit</strong></p>
+              %> </strong>and that <strong><%= @employee_examination_session.practitioner_conclusion %></strong></p>
 
           <div class="card-text">
             <dl class="row">

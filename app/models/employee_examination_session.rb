@@ -28,7 +28,7 @@ class EmployeeExaminationSession < ApplicationRecord
 
     # TODO Add tests for the below at least
     def workplace_details
-        self.examination_session.workplace.name + self.examination_session.workplace.address
+        self.examination_session.workplace.name + ' ' + self.examination_session.workplace.address
     end
 
     def examination_type
@@ -40,7 +40,7 @@ class EmployeeExaminationSession < ApplicationRecord
     end
 
     def practitioner_details
-        self.examination_session.workplace.practitioner.name + self.examination_session.workplace.practitioner.address
+        self.examination_session.workplace.practitioner.name + ' ' + self.examination_session.workplace.practitioner.address
     end
 
     def practitioner_registration
@@ -61,6 +61,10 @@ class EmployeeExaminationSession < ApplicationRecord
 
     def practitioner_fax
         self.examination_session.workplace.practitioner.fax
+    end
+
+    def practitioner_conclusion
+        self.employee.gender == 1 ? 'he' : 'she' + ' is fit' 
     end
 
 end

@@ -5,7 +5,8 @@ RSpec.describe "examination_sessions/edit", type: :view do
     @examination_session = assign(:examination_session, ExaminationSession.create!(
       examination_type: "MyString",
       workplace: Workplace.create,
-      date_of_exam: Date.yesterday
+      date_of_exam: Date.yesterday,
+      health_risk: "idiet"
     ))
   end
 
