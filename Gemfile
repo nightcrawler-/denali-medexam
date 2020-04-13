@@ -56,12 +56,12 @@ gem "rolify"
 # Crash Reports
 gem 'rollbar'
 
+# annotate model files with db fields, run for first time: rails g annotate:install
+gem 'annotate'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-
-  # annotate model files with db fields, run for first time: rails g annotate:install
-  gem 'annotate'
 
   # Cleaner output when running tests
   gem 'minitest-reporters'

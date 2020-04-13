@@ -137,10 +137,14 @@ namespace :deploy do
     end
   end
 
-  #desc "Reload the database with seed data"
-  #task :seed do
-  #  run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
-  #end
+  desc "reload the database with seed data"
+  task :seed do
+    on roles(:all) do
+      within current_path do
+        execute :bundle, :exec, 'rails', 'db:seed', 'RAILS_ENV=production'
+      end
+    end
+  end
 
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
