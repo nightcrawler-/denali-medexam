@@ -115,13 +115,15 @@ Now, setting up things on heroku should be quite straight forward -- get account
 You'll need to set up the heroku CLI on your development machine, the guide is pretty clear on the steps. If you choose to deploy your app automatically for certain branches, easy. But for the first deployment, you need to perfom your db:migrate and db:seed tasks from the heroku CLI: `heroku run db:migrate -a your-app`
 
 How to reset PG Database on Heroku?
-Step 1: heroku restart
-Step 2: heroku pg:reset DATABASE (no need to change the DATABASE)
-Step 3: heroku run rake db:migrate
-Step 4: heroku run rake db:seed (if you have seed)
+
+1. `heroku restart`
+2. `heroku pg:reset DATABASE (no need to change the DATABASE)`
+3. `heroku run rake db:migrate`
+4. `heroku run rake db:seed (if you have seed)`
+
 One liner
 
-heroku restart -a denali-medexam; heroku pg:reset DATABASE --confirm denali-medexam denali-medexam; heroku run rake db:migrate -a denali-medexam
+`heroku restart -a denali-medexam; heroku pg:reset DATABASE --confirm denali-medexam denali-medexam; heroku run rake db:migrate -a denali-medexam`
 
 ###
 
@@ -131,9 +133,9 @@ After deployment, user sign up is currently open, however, to gain full control,
 
 ### Some Postgresql tips/notes
 To view database size:
-
 ```
 psql dbname username
 SELECT pg_size_pretty( pg_database_size('dbname') );
 SELECT pg_size_pretty( pg_total_relation_size('tablename') );
 ```
+Or on heroku: `heroku pg:info -a denali-medexam`
