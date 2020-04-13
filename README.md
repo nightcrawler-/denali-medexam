@@ -141,7 +141,8 @@ SELECT pg_size_pretty( pg_total_relation_size('tablename') );
 Or on heroku: `heroku pg:info -a denali-medexam`
 
 Download and backup database:
-```heroku pg:backups:capture
+```
+heroku pg:backups:capture
 heroku pg:backups:download
 ```
 Use an external database on heroku, in this case, one hosted on ElephantSQL, which is a wrapper around common/larger Cloud Computing providers:
