@@ -128,3 +128,12 @@ heroku restart -a denali-medexam; heroku pg:reset DATABASE --confirm denali-mede
 After deployment, user sign up is currently open, however, to gain full control, use the rails console to assign your user the admin role. `User.find(:id, email whatever) then x.add_role :admin`
 
 ### 
+
+### Some Postgresql tips/notes
+To view database size:
+
+```
+psql dbname username
+SELECT pg_size_pretty( pg_database_size('dbname') );
+SELECT pg_size_pretty( pg_total_relation_size('tablename') );
+```
