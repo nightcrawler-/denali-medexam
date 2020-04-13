@@ -145,3 +145,8 @@ Download and backup database:
 heroku pg:backups:capture
 heroku pg:backups:download
 ```
+Use an external database on heroku, in this case, one hosted on ElephantSQL, which is a wrapper around common/larger Cloud Computing providers, make sure to destroy the current hobby-dev database:
+```
+heroku config:set DATABASE_URL=postgres://hnbnqwbq:j2WKzfMn39TmujIGRweupznr2H_cTzr9@rogue.db.elephantsql.com:5432/hnbnqwbq -a denali-medexam
+```
+
