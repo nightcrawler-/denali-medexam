@@ -139,3 +139,9 @@ SELECT pg_size_pretty( pg_database_size('dbname') );
 SELECT pg_size_pretty( pg_total_relation_size('tablename') );
 ```
 Or on heroku: `heroku pg:info -a denali-medexam`
+
+Download and backup database:
+```
+heroku pg:backups:capture
+heroku pg:backups:download
+```
