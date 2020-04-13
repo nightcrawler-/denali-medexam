@@ -79,17 +79,17 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 # Default production, uncomment to move back to
-#production:
-#  <<: *default
-#  database: denali_medexam_production
-#  username: frederick
-#  password: desmosedici
+production:
+  <<: *default
+  database: denali_medexam_production
+  username: frederick
+  password: desmosedici
 
 # Using elephantsql -- seems to be a wrapper around common cloud platforms -- used temporarily in the absence of cloud cred
 #
-production:
-  <<: *default
-  host: rogue.db.elephantsql.com
-  database: hnbnqwbq
-  username: hnbnqwbq
-  password: j2WKzfMn39TmujIGRweupznr2H_cTzr9
+#production:
+#  <<: *default
+#  host: rogue.db.elephantsql.com
+#  database: hnbnqwbq
+#  username: hnbnqwbq
+#  password: j2WKzfMn39TmujIGRweupznr2H_cTzr9
