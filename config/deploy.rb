@@ -3,6 +3,16 @@ lock "~> 3.13.0"
 
 set :application, "denali-medexam"
 set :repo_url, "git@github.com:nightcrawler-/denali-medexam.git"
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.7.0'
+
+# Use .pem based auth for ssh
+#set :ssh_options, {
+ #   user: fetch(:user),
+ #   keys: %w('/home/frederick/.ssh/fred.pem'),
+ #   forward_agent: true,
+ #   auth_methods: %w('publickey')
+ # }
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
