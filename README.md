@@ -112,7 +112,7 @@ For some strange reason, one of the dev/test groups gems, rspec, plus swagger et
 
 Now, setting up things on heroku should be quite straight forward -- get account, link to github and project etc.
 
-You'll need to set up the heroku CLI on your development machine, the guide is pretty clear on the steps. If you choose to deploy your app automatically for certain branches, easy. But for the first deployment, you need to perfom your db:migrate and db:seed tasks from the heroku CLI: `heroku run db:migrate -a your-app`
+You'll need to set up the heroku CLI on your development machine, the guide is pretty clear on the steps. If you choose to deploy your app automatically for certain branches, easy. But for the first deployment, you need to perfom your db:migrate and db:seed tasks from the heroku CLI: `heroku run rails db:migrate -a your-app`
 
 How to reset PG Database on Heroku?
 
